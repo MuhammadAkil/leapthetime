@@ -99,12 +99,13 @@ function MobileNavigation() {
 
 export function Header() {
   return (
-    <header className="fixed-top w-full border-b py-3 backdrop-blur-[25px]">
+    <header className="fixed w-full border-b py-3 backdrop-blur-[25px]">
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="#" aria-label="Home">
-              <Logo className="h-10 w-auto" />
+              {/* <Logo className="h-10 w-auto" /> */}
+              <h1 className="text-4xl text-white">LeapTheLimit</h1>
             </Link>
           </div>
           <div className="flex items-center md:gap-x-12">
@@ -121,7 +122,7 @@ export function Header() {
                 Request Demo <span className="inline"></span>
               </span>
             </Button>
-            
+
             <div className="hidden md:block">
               <NavLink href="/login">Login</NavLink>
             </div>

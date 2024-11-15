@@ -12,8 +12,8 @@ import logoTuple from '@/images/logos/tuple.svg'
 export function Hero() {
   return (
     <Container className="pb-16 pt-20 text-center lg:pt-32">
-      <h1 className=" mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-        Accounting{' '}
+      <h1 className="gradient-text mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-8xl">
+        {/* Accounting{' '}
         <span className="relative whitespace-nowrap text-blue-600">
           <svg
             aria-hidden="true"
@@ -26,8 +26,10 @@ export function Hero() {
           <span className="gradient-text relative">made simple</span>
         </span>{' '}
         for small businesses.
+         */}
+        Supercharge <br /> Your Productivity
       </h1>
-      <p className="gradient-text mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700 ">
+      <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700 ">
         Most bookkeeping software is accurate, but hard to use. We make the
         opposite trade-off, and hope you don’t get audited.
       </p>
