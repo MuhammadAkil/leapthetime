@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 
 export function NavLink({
@@ -17,25 +17,40 @@ export function NavLink({
   }[]
 }) {
   const [isHovered, setIsHovered] = useState(false)
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleMouseEnter = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+    }
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    timerRef.current = setTimeout(() => {
+      setIsHovered(false)
+    }, 100)
+  }
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter} // Trigger hover on mouse enter
+      onMouseLeave={handleMouseLeave} // Trigger hover off with delay
     >
+      {/* Button (NavLink) */}
       <Link
         href={href}
-        className="inline-block rounded-lg px-2 py-1 text-sm text-[#ffffff96] "
+        className="inline-block rounded-lg px-2 py-1 text-sm text-[#ffffff96] hover:text-black"
       >
         {children}
       </Link>
 
       {/* Mega Menu */}
       {isHovered && (
-        <div className="mega-menu absolute left-0 top-full z-10 mt-2 w-full rounded-lg bg-white p-4 text-black shadow-lg md:w-[350px]">
+        <div className="absolute left-0 top-full z-20 mt-2 w-[300px] rounded-lg bg-white p-4 text-black opacity-100 shadow-lg transition-all duration-200">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {megaMenuContent.map((item, index) => (
+            {megaMenuContent?.map((item, index) => (
               <div key={index} className="flex flex-col items-center">
                 <div className="text-2xl">{item.icon}</div>
                 {item.image && (
