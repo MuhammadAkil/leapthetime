@@ -21,6 +21,21 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+
+      keyframes: {
+        slideUp: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '20%': { transform: 'translateY(0)', opacity: '1' },
+          '33.33%': { transform: 'translateY(0)', opacity: '1' },
+          '53.33%': { transform: 'translateY(-100%)', opacity: '0' },
+          '100%': { transform: 'translateY(-100%)', opacity: '0' },
+        },
+      },
+      animation: {
+        slideText: 'slideUp 4s infinite',
+      },
+
+
       borderRadius: {
         '4xl': '2rem',
       },

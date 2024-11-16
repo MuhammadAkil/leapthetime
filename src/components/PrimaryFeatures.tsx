@@ -11,32 +11,33 @@ import screenshotExpenses from '@/images/screenshots/expenses.png'
 import screenshotPayroll from '@/images/screenshots/payroll.png'
 import screenshotReporting from '@/images/screenshots/reporting.png'
 import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import { Button } from './Button'
 
 const features = [
   {
-    title: 'Payroll',
+    title: 'Create',
     description:
-      "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
+      'Setup your AI-powered workspace and add your team in minutes.',
     image: screenshotPayroll,
   },
   {
-    title: 'Claim expenses',
+    title: 'Choose',
     description:
-      "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
+      'Choose one of our pre-built AI agents or build your own to suit your needs.',
     image: screenshotExpenses,
   },
   {
-    title: 'VAT handling',
+    title: 'Launch',
     description:
-      "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
+      'Launch your agent to do work for you or share it with a team member for collaboration.',
     image: screenshotVatReturns,
   },
-  {
-    title: 'Reporting',
-    description:
-      'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
-    image: screenshotReporting,
-  },
+  // {
+  //   title: 'Reporting',
+  //   description:
+  //     'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
+  //   image: screenshotReporting,
+  // },
 ]
 
 export function PrimaryFeatures() {
@@ -63,25 +64,25 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden bg-blue-600 pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden  pb-28 pt-20 sm:py-32"
     >
-      <Image
+      {/* <Image
         className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
         src={backgroundImage}
         alt=""
         width={2245}
         height={1636}
         unoptimized
-      />
+      /> */}
       <Container className="relative">
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+        <div className="max-w-2xl md:mx-auto md:text-start xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to run your books.
+            How it works?
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-blue-100">
+          {/* <p className="mt-6 text-lg tracking-tight text-blue-100">
             Well everything you need if you aren’t that picky about minor
             details like tax compliance.
-          </p>
+          </p> */}
         </div>
         <Tab.Group
           as="div"
@@ -90,7 +91,7 @@ export function PrimaryFeatures() {
         >
           {({ selectedIndex }) => (
             <>
-              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
+              <div className=" -mx-4 flex flex-col gap-y-28 overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
                   {features.map((feature, featureIndex) => (
                     <div
@@ -128,6 +129,20 @@ export function PrimaryFeatures() {
                     </div>
                   ))}
                 </Tab.List>
+                <Button className="!max-w-[250px] !p-3">
+                  Request a demo{' '}
+                  <span className="ms-2 inline">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      className="fill-white"
+                    >
+                      <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+                    </svg>
+                  </span>
+                </Button>
               </div>
               <Tab.Panels className="lg:col-span-7">
                 {features.map((feature) => (
@@ -140,7 +155,7 @@ export function PrimaryFeatures() {
                     </div>
                     <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                       <Image
-                        className="w-full"
+                        className="w-full	invert "
                         src={feature.image}
                         alt=""
                         priority

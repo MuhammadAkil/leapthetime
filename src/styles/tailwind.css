@@ -5,12 +5,12 @@
 @layer utilities {
   .gradient-text {
     background: #F0F0F0;
-    background: linear-gradient(to right, #F0F0F0 25%, #006FE8 100%);
+    background: linear-gradient(to right, #F0F0F0 20%, #006FE8 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   
 }
 body{
-    background-color: #000;
+    background-color: #000 !important;
 }

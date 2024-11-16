@@ -98,35 +98,111 @@ function MobileNavigation() {
 }
 
 export function Header() {
+  const megaMenuData = {
+    Products: [
+      {
+        name: 'Product 1',
+        icon: '🔧',
+        image: '',
+        description: 'This is product 1',
+      },
+      {
+        name: 'Product 2',
+        icon: '📦',
+        image: 'https://via.placeholder.com/150?text=Product+2',
+        description: 'This is product 2',
+      },
+      {
+        name: 'Product 3',
+        icon: '💡',
+        image: '',
+        description: 'This is product 3',
+      },
+    ],
+    AI: [
+      {
+        name: 'AI Tool 1',
+        icon: '🤖',
+        image: 'https://via.placeholder.com/150?text=AI+Tool+1',
+        description: 'This is AI tool 1',
+      },
+      {
+        name: 'AI Tool 2',
+        icon: '🔍',
+        image: 'https://via.placeholder.com/150?text=AI+Tool+2',
+        description: 'This is AI tool 2',
+      },
+    ],
+    Company: [
+      { name: 'About Us', icon: '🏢', description: 'Learn about our company' },
+      { name: 'Careers', icon: '💼', description: 'Join our team' },
+    ],
+    Resources: [
+      {
+        name: 'Resource 1',
+        icon: '📚',
+        description: 'Learn more about resources',
+      },
+      { name: 'Resource 2', icon: '🔗', description: 'Explore resource 2' },
+    ],
+    Workshops: [
+      { name: 'Workshop 1', icon: '🛠️', description: 'Join workshop 1' },
+      { name: 'Workshop 2', icon: '🎓', description: 'Join workshop 2' },
+    ],
+  }
+
   return (
-    <header className="fixed w-full border-b py-3 backdrop-blur-[25px]">
+    <header className="fixed z-[100] w-full border-b border-[#ffffff1a] py-3 backdrop-blur-[25px]">
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="#" aria-label="Home">
-              {/* <Logo className="h-10 w-auto" /> */}
-              <h1 className="text-4xl text-white">LeapTheLimit</h1>
+              <h1 className="text-2xl text-white">LeapTheLimit</h1>
             </Link>
           </div>
           <div className="flex items-center md:gap-x-12">
-            <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#features">Products</NavLink>
-              <NavLink href="#testimonials">Company</NavLink>
-              <NavLink href="#pricing">Resources</NavLink>
-              <NavLink href="#pricing">Workshops</NavLink>
+            <div className="hidden text-[#ffffff96] md:flex md:gap-x-8">
+              <NavLink href="#features" megaMenuContent={megaMenuData.AI}>
+                AI
+              </NavLink>
+              <NavLink href="#features" megaMenuContent={megaMenuData.Products}>
+                Products
+              </NavLink>
+              <NavLink
+                href="#testimonials"
+                megaMenuContent={megaMenuData.Company}
+              >
+                Company
+              </NavLink>
+              <NavLink
+                href="#pricing"
+                megaMenuContent={megaMenuData?.Resources}
+              >
+                Resources
+              </NavLink>
+              <NavLink
+                href="#pricing"
+                megaMenuContent={megaMenuData?.Workshops}
+              >
+                Workshops
+              </NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-            <Button href="/register">
-              <span>
-                Request Demo <span className="inline"></span>
+            <Button href="/register" className="flex items-center gap-2">
+              <span>Request Demo </span>
+              <span className="inline rotate-[-45deg]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  className="fill-white"
+                >
+                  <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+                </svg>
               </span>
             </Button>
-
-            <div className="hidden md:block">
-              <NavLink href="/login">Login</NavLink>
-            </div>
-
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
             </div>
