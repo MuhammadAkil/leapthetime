@@ -5,7 +5,7 @@ import { Button } from './Button'
 
 export default function WeeklySummary() {
   return (
-    <div className=" flex items-center justify-center md:px-12 lg:px-0">
+    <div className=" flex items-center justify-center py-20 md:px-12 lg:px-0 lg:py-32">
       <div className="relative">
         <div className="inset-0 h-auto max-w-[1560px] transform cursor-pointer overflow-hidden rounded-lg  object-cover shadow-lg  transition-all duration-300 ease-out hover:scale-105">
           <Image

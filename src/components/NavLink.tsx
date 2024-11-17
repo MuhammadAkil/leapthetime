@@ -41,7 +41,7 @@ export function NavLink({
       {/* Button (NavLink) */}
       <Link
         href={href}
-        className="inline-block rounded-lg px-2 py-1 text-sm text-[#ffffff96] hover:text-black"
+        className="inline-block rounded-lg px-2 py-1 text-sm text-[#ffffff96] "
       >
         {children}
       </Link>

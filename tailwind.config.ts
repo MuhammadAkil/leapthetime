@@ -21,7 +21,6 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
-
       keyframes: {
         slideUp: {
           '0%': { transform: 'translateY(100%)', opacity: '0' },

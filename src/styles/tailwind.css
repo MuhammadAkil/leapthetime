@@ -9,8 +9,32 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .gradient-text-left {
+       background: #F0F0F0;
+    background: linear-gradient(to left, #F0F0F0 20%, #006FE8 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+.custom-shadow {
+  box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 30px 60px 0px,    /* Outer shadow: Large blur */
+    rgba(0, 0, 0, 0.25) 0px 15px 30px 0px,    /* Outer shadow: Medium blur */
+    rgba(0, 0, 0, 0.25) 0px 5px 10px 0px,     /* Outer shadow: Small blur */
+    rgba(204, 215, 255, 0.15) 0px 0px 100px 0px inset;  /* Inset shadow */
+}
+
   
 }
 body{
     background-color: #000 !important;
+}
+.gradient-border {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: #ffffff00;
+    /* background: radial-gradient(circle, #00df9a 0%, #00da96 45%, #050505 90%); */
+   background:  linear-gradient(-90deg, #ffffff00 0%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0) 100%);
+    top: 10px;
+    opacity: .3;
 }

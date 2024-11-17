@@ -74,41 +74,47 @@ export function Hero() {
           Request a demo
         </Button>
       </div>
-      <div className="mt-36 lg:mt-44">
+      {/* <div className="mt-36 overflow-hidden lg:mt-44">
         <p className="font-display text-base text-slate-900">
           Trusted by these six companies so far
         </p>
-        <ul
-          role="list"
-          className="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
-        >
-          {[
-            [
+        <div className="mt-8 flex space-x-8 sm:flex-col sm:space-x-0 sm:space-y-10 xl:flex-row xl:space-y-0">
+          <div className="animate-marquee flex w-max">
+            {[
               { name: 'Transistor', logo: logoTransistor },
               { name: 'Tuple', logo: logoTuple },
               { name: 'StaticKit', logo: logoStaticKit },
-            ],
-            [
               { name: 'Mirage', logo: logoMirage },
               { name: 'Laravel', logo: logoLaravel },
               { name: 'Statamic', logo: logoStatamic },
-            ],
-          ].map((group, groupIndex) => (
-            <li key={groupIndex}>
-              <ul
-                role="list"
-                className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
+            ].map((company, index) => (
+              <div
+                key={index}
+                className="flex flex-shrink-0 items-center justify-center gap-x-8 sm:gap-y-10"
               >
-                {group.map((company) => (
-                  <li key={company.name} className="flex">
-                    <Image src={company.logo} alt={company.name} unoptimized />
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </div>
+                <Image src={company.logo} alt={company.name} unoptimized />
+              </div>
+            ))}
+          </div>
+          <div className="animate-marquee flex w-max">
+            {[
+              { name: 'Transistor', logo: logoTransistor },
+              { name: 'Tuple', logo: logoTuple },
+              { name: 'StaticKit', logo: logoStaticKit },
+              { name: 'Mirage', logo: logoMirage },
+              { name: 'Laravel', logo: logoLaravel },
+              { name: 'Statamic', logo: logoStatamic },
+            ].map((company, index) => (
+              <div
+                key={index}
+                className="flex flex-shrink-0 items-center justify-center gap-x-8 sm:gap-y-10"
+              >
+                <Image src={company.logo} alt={company.name} unoptimized />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div> */}
     </Container>
   )
 }
