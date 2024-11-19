@@ -13,7 +13,7 @@ export function Integration() {
             <h1 className="title-font mb-4 text-3xl font-medium text-[#ffffff96] sm:text-4xl">
               Smart integrations at <br /> your fingertips
             </h1>
-            <p className="mb-8 w-[50ch] leading-relaxed">
+            <p className="mb-8 leading-relaxed lg:w-[50ch]">
               Be on top of things and get practical assistance for smart
               decision-making.
             </p>

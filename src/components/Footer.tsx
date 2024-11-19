@@ -1,6 +1,8 @@
 'use client'
 import React from 'react'
 
+import StarLogo from '@/images/avif/leap_the _time_logo.avif'
+import Image from 'next/image'
 // components/Footer.js
 
 import Link from 'next/link'
@@ -28,7 +30,21 @@ export default function Footer() {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg> */}
-            <span className="ml-3 text-xl">LeapTheLimit</span>
+            {/* <span className="ml-3 text-xl">LeapTheLimit</span> */}
+
+            <Link
+              href="#"
+              aria-label="Home"
+              className="flex items-center gap-1"
+            >
+              <Image
+                src={StarLogo}
+                alt="logo"
+                className="w-8 rounded-xl object-cover"
+              />
+
+              <h1 className="text-xl text-white">LeapTheLimit</h1>
+            </Link>
           </Link>
           <p className="mt-2 text-sm text-gray-500">
             All rights reserved, the LeapTheLimit. logo and trademarks may not

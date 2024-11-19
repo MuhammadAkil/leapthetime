@@ -9,6 +9,9 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
+import AI from '@/images/avif/hope-ai.avif'
+import StarLogo from '@/images/avif/leap_the _time_logo.avif'
+import Image from 'next/image'
 
 function MobileNavLink({
   href,
@@ -99,56 +102,122 @@ function MobileNavigation() {
 
 export function Header() {
   const megaMenuData = {
-    Products: [
-      {
-        name: 'Product 1',
-        icon: '🔧',
-        image: '',
-        description: 'This is product 1',
-      },
-      {
-        name: 'Product 2',
-        icon: '📦',
-        image: 'https://via.placeholder.com/150?text=Product+2',
-        description: 'This is product 2',
-      },
-      {
-        name: 'Product 3',
-        icon: '💡',
-        image: '',
-        description: 'This is product 3',
-      },
-    ],
-    AI: [
-      {
-        name: 'AI Tool 1',
-        icon: '🤖',
-        image: 'https://via.placeholder.com/150?text=AI+Tool+1',
-        description: 'This is AI tool 1',
-      },
-      {
-        name: 'AI Tool 2',
-        icon: '🔍',
-        image: 'https://via.placeholder.com/150?text=AI+Tool+2',
-        description: 'This is AI tool 2',
-      },
-    ],
-    Company: [
-      { name: 'About Us', icon: '🏢', description: 'Learn about our company' },
-      { name: 'Careers', icon: '💼', description: 'Join our team' },
-    ],
-    Resources: [
-      {
-        name: 'Resource 1',
-        icon: '📚',
-        description: 'Learn more about resources',
-      },
-      { name: 'Resource 2', icon: '🔗', description: 'Explore resource 2' },
-    ],
-    Workshops: [
-      { name: 'Workshop 1', icon: '🛠️', description: 'Join workshop 1' },
-      { name: 'Workshop 2', icon: '🎓', description: 'Join workshop 2' },
-    ],
+    Products: {
+      content: [
+        {
+          name: 'Product 1',
+          icon: '🛠️',
+          description: 'This is product 1',
+        },
+        {
+          name: 'Product 2',
+          icon: '📦',
+          description: 'This is product 2',
+        },
+        {
+          name: 'Product 3',
+          icon: '🔧',
+          description: 'This is product 3',
+        },
+        {
+          name: 'Product 4',
+          icon: '🛠️',
+          description: 'This is product 4',
+        },
+        {
+          name: 'Product 5',
+          icon: '🔧',
+          description: 'This is product 3',
+        },
+        {
+          name: 'Product 6',
+          icon: '🛠️',
+          description: 'This is product 4',
+        },
+      ],
+      images: [
+        //  'https://via.placeholder.com/150?text=Product+1',
+        //  'https://via.placeholder.com/150?text=Product+2',
+        //  'https://via.placeholder.com/150?text=Product+3',
+        //  'https://via.placeholder.com/150?text=Product+4',
+      ],
+    },
+    AI: {
+      content: [
+        // {
+        //   name: 'AI Tool 1',
+        //   icon: '🤖',
+        //   description: 'This is AI tool 1',
+        // },
+        // {
+        //   name: 'AI Tool 2',
+        //   icon: '🔍',
+        //   description: 'This is AI tool 2',
+        // },
+      ],
+      images: [
+        'https://via.placeholder.com/150?text=AI+Tool+1',
+        'https://via.placeholder.com/150?text=AI+Tool+2',
+        //  'https://via.placeholder.com/150?text=Product+3',
+        //  'https://via.placeholder.com/150?text=Product+4',
+      ],
+    },
+    Company: {
+      content: [
+        {
+          name: 'About',
+          icon: '🤖',
+          description: 'Learn who we are',
+        },
+        {
+          name: 'Contact',
+          icon: '🔍',
+          description: 'Get in touch',
+        },
+        {
+          name: 'Careers',
+          icon: '🤖',
+          description: 'Explore open position',
+        },
+        {
+          name: 'Newsroom',
+          icon: '🔍',
+          description: 'Latest annocuments',
+        },
+      ],
+      images: [AI],
+    },
+    Resources: {
+      content: [
+        {
+          name: 'AI Tool 1',
+          icon: '🤖',
+          description: 'This is AI tool 1',
+        },
+        {
+          name: 'AI Tool 2',
+          icon: '🔍',
+          description: 'This is AI tool 2',
+        },
+      ],
+      images: [AI],
+    },
+    Workshops: {
+      content: [
+        {
+          name: 'AI Tool 1',
+          icon: '🤖',
+          description: 'This is AI tool 1',
+        },
+        {
+          name: 'AI Tool 2',
+          icon: '🔍',
+          description: 'This is AI tool 2',
+        },
+      ],
+      images: [],
+    },
+    // Add more categories if needed, following the same structure
   }
 
   return (
@@ -156,8 +225,18 @@ export function Header() {
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="#" aria-label="Home">
-              <h1 className="text-2xl text-white">LeapTheLimit</h1>
+            <Link
+              href="#"
+              aria-label="Home"
+              className="flex items-center gap-1"
+            >
+              <Image
+                src={StarLogo}
+                alt="logo"
+                className="w-8 rounded-xl object-cover"
+              />
+
+              <h1 className="text-xl text-white">LeapTheLimit</h1>
             </Link>
           </div>
           <div className="flex items-center md:gap-x-12">
