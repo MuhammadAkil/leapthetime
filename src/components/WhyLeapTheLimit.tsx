@@ -36,7 +36,7 @@ export function WhyLeapTheLimit() {
             </p>
             <h1 className="title-font my-2 text-2xl font-medium text-[#ffffff96] sm:text-3xl lg:w-3/5">
               A Scalable AI Platform. Design, deploy, and manage effective AI
-              agents for your team's unique needs
+              agents for your team&apos;s unique needs
             </h1>
           </div>
           <span className="m-6 w-full min-w-[200px] rounded-full border p-[0.2rem] px-3 text-sm font-medium text-white">

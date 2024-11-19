@@ -10,8 +10,8 @@ export function UnstoppableWithAi() {
         Become unstoppable with AI by your side.
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-[#ffffff96]">
-        Let's create an AI-driven future that elevates your team and leaves the
-        competition behind.
+        Let&apos;s create an AI-driven future that elevates your team and leaves
+        the competition behind.
       </p>
 
       <div className="mt-10 flex justify-center gap-x-6">

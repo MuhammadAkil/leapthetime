@@ -101,13 +101,17 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
                 >
                   {megaMenuContent.images.map((image, index) =>
                     typeof image === 'string' ? (
-                      <img key={index} src={image} alt={`Image ${index + 1}`} />
+                      <Image
+                        key={index}
+                        src={image}
+                        alt={`Image ${index + 1}`}
+                      />
                     ) : (
                       <Image
                         key={index}
                         src={image}
                         alt={`Image ${index + 1}`}
-                        className="z-[9999999] h-40 w-64 rounded-xl object-cover"
+                        className=" h-40 w-64 rounded-xl object-cover"
                       />
                     ),
                   )}
