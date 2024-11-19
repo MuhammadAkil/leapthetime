@@ -1,4 +1,4 @@
-import Image from 'next/image'
+'use client'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
