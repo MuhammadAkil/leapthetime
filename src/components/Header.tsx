@@ -7,7 +7,6 @@ import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 import AI from '@/images/avif/hope-ai.avif'
 import StarLogo from '@/images/avif/leap_the _time_logo.avif'
@@ -156,8 +155,9 @@ export function Header() {
         // },
       ],
       images: [
-        'https://via.placeholder.com/150?text=AI+Tool+1',
-        'https://via.placeholder.com/150?text=AI+Tool+2',
+        AI,
+        // 'https://via.placeholder.com/150?text=AI+Tool+1',
+        // 'https://via.placeholder.com/150?text=AI+Tool+2',
         //  'https://via.placeholder.com/150?text=Product+3',
         //  'https://via.placeholder.com/150?text=Product+4',
       ],
@@ -215,7 +215,7 @@ export function Header() {
           description: 'This is AI tool 2',
         },
       ],
-      images: [],
+      images: [AI],
     },
     // Add more categories if needed, following the same structure
   }

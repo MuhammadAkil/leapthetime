@@ -15,7 +15,7 @@ export function TrustedClient() {
   return (
     <Container className="pb-32 text-center ">
       <div className="mt-36 overflow-hidden lg:mt-10">
-        <h2 className="font-display text-xl text-[#ffffffa2]">
+        <h2 className="font-display text-2xl text-[#ffffffa2]">
           Trusted by teams at
         </h2>
         <div className="mt-8 flex space-x-8 sm:flex-col sm:space-x-0 sm:space-y-10 xl:flex-row xl:space-y-0">

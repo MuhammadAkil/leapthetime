@@ -20,10 +20,10 @@ interface Feature {
 
 const features: Array<Feature> = [
   {
-    name: 'Reporting',
+    name: 'Government',
     summary: 'Stay on top of things with always up-to-date reporting features.',
     description:
-      'We talked about reporting in the section above but we needed three items here, so mentioning it one more time for posterity.',
+      'Make smarter policy decisions with AI. We provide the data-driven insights you need for effective governance.',
     image: screenshotProfitLoss,
     icon: function ReportingIcon() {
       let id = useId()
@@ -54,7 +54,7 @@ const features: Array<Feature> = [
     },
   },
   {
-    name: 'Inventory',
+    name: 'Private',
     summary:
       'Never lose track of what’s in stock with accurate inventory tracking.',
     description:
@@ -82,7 +82,7 @@ const features: Array<Feature> = [
     },
   },
   {
-    name: 'Contacts',
+    name: 'Public',
     summary:
       'Organize all of your contacts, service providers, and invoices in one place.',
     description:
@@ -132,16 +132,16 @@ function Feature({
       </div>
       <h3
         className={clsx(
-          'mt-6 text-sm font-medium',
-          isActive ? 'text-blue-600' : 'text-slate-600',
+          'mt-6 text-2xl font-medium',
+          isActive ? 'text-blue-600' : 'text-[#ffffff96]',
         )}
       >
         {feature.name}
       </h3>
-      <p className="mt-2 font-display text-xl text-slate-900">
+      {/* <p className="mt-2 font-display text-xl text-slate-900">
         {feature.summary}
-      </p>
-      <p className="mt-4 text-sm text-slate-600">{feature.description}</p>
+      </p> */}
+      <p className="mt-4 text-sm text-[#ffffff96]">{feature.description}</p>
     </div>
   )
 }
@@ -233,13 +233,13 @@ export function SecondaryFeatures() {
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Simplify everyday business tasks.
-          </h2>
           <p className="mt-4 text-lg tracking-tight text-[#ffffff96]">
-            Because you’d probably be a little confused if we suggested you
-            complicate your everyday business tasks instead.
+            LeapTheLimit
           </p>
+          <h2 className="font-display text-3xl tracking-tight text-[#ffffff96] sm:text-4xl">
+            Powering Every Profession into <br className="hidden lg:block" />
+            the Future
+          </h2>
         </div>
         <FeaturesMobile />
         <FeaturesDesktop />

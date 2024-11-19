@@ -105,6 +105,7 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
                         key={index}
                         src={image}
                         alt={`Image ${index + 1}`}
+                        className="h-40 w-64 "
                       />
                     ) : (
                       <Image
