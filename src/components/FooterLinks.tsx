@@ -5,7 +5,6 @@ import Link from 'next/link'
 export default function FooterLinks() {
   // First set of links
   const firstLinks = [
-    'AI',
     'For Business',
     'For Government',
     'For Education',
@@ -13,17 +12,10 @@ export default function FooterLinks() {
   ]
 
   // Second set of links
-  const secondLinks = [
-    'Company',
-    'About LeapTheLimit',
-    'Newsroom',
-    'Contact',
-    'Careers',
-  ]
+  const secondLinks = ['About LeapTheLimit', 'Newsroom', 'Contact', 'Careers']
 
   // Third set of links
   const thirdLinks = [
-    'Resources',
     'Blog',
     'Trending',
     'Academy',
@@ -32,17 +24,20 @@ export default function FooterLinks() {
   ]
 
   // Fourth set of links
-  const fourthLinks = ['Socials', 'LinkedIn', 'Instagram', 'YouTube', 'X']
+  const fourthLinks = ['LinkedIn', 'Instagram', 'YouTube', 'X']
 
   return (
-    <div className=" mt-10 flex flex-grow flex-wrap text-center md:mt-0 md:pl-20 md:text-left">
+    <div className="mt-10 flex flex-grow flex-wrap text-left md:mt-0">
       {/* First set of links */}
-      <div className="w-full px-4 md:w-1/2 lg:w-1/4">
-        <nav className="mb-3 list-none">
+      <div className="w-1/2 lg:w-1/4">
+        <h6 className="rounded-y-full mb-6  border-l-2 !border-[#363636] ps-2 text-[14px] font-medium leading-[20px] text-white">
+          Product
+        </h6>
+        <nav className="mb-10 list-none">
           {firstLinks.map((link, idx) => (
             <li key={idx} className="pb-5">
               <Link
-                className="text-gray-300 hover:text-gray-400 hover:underline"
+                className="whitespace-pre text-[13px] leading-[20px] text-[#ffffffb3] hover:text-white hover:underline"
                 href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
                 passHref
               >
@@ -54,12 +49,15 @@ export default function FooterLinks() {
       </div>
 
       {/* Second set of links */}
-      <div className="w-full px-4 md:w-1/2 lg:w-1/4">
+      <div className="w-1/2 lg:w-1/4">
+        <h6 className="rounded-y-full mb-6  border-l-2 !border-[#363636] ps-2 text-[14px] font-medium leading-[20px] text-white">
+          Company
+        </h6>
         <nav className="mb-10 list-none">
           {secondLinks.map((link, idx) => (
             <li key={idx} className="pb-5">
               <Link
-                className="text-gray-300 hover:text-gray-400 hover:underline"
+                className="whitespace-pre text-[13px] leading-[20px]	text-[#ffffffb3] hover:text-white hover:underline"
                 href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
                 passHref
               >
@@ -71,12 +69,15 @@ export default function FooterLinks() {
       </div>
 
       {/* Third set of links */}
-      <div className="w-full px-4 md:w-1/2 lg:w-1/4">
+      <div className="w-1/2 lg:w-1/4">
+        <h6 className="rounded-y-full mb-6 border-l-2 !border-[#363636] ps-2 text-[14px] font-medium leading-[20px] text-white">
+          Resources
+        </h6>
         <nav className="mb-10 list-none">
           {thirdLinks.map((link, idx) => (
             <li key={idx} className="pb-5">
               <Link
-                className="text-gray-300 hover:text-gray-400 hover:underline"
+                className="whitespace-pre text-[13px] leading-[20px]	text-[#ffffffb3] hover:text-white hover:underline"
                 href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
                 passHref
               >
@@ -88,12 +89,15 @@ export default function FooterLinks() {
       </div>
 
       {/* Fourth set of links */}
-      <div className="w-full px-4 md:w-1/2 lg:w-1/4">
+      <div className="w-1/2 lg:w-1/4">
+        <h6 className="rounded-y-full mb-6  border-l-2 !border-[#363636] ps-2 text-[14px] font-medium leading-[20px] text-white">
+          Follow Us
+        </h6>
         <nav className="mb-10 list-none">
           {fourthLinks.map((link, idx) => (
             <li key={idx} className="pb-5">
               <Link
-                className="text-gray-300 hover:text-gray-400 hover:underline"
+                className="whitespace-pre text-[13px] leading-[20px]	text-[#ffffffb3] hover:text-white hover:underline"
                 href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
                 passHref
               >

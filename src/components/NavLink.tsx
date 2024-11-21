@@ -41,23 +41,25 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
 
   return (
     <div
-      className="relative"
+      className=""
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <Link
         href={href}
-        className="inline-block rounded-lg px-2 py-1 text-sm text-[#ffffff96]"
+        className={`relative inline-block rounded-lg px-2 py-1 text-sm ${
+          isHovered ? 'text-white' : 'text-[#ffffff96]'
+        } hover:text-white`}
       >
         {children}
       </Link>
 
       {isHovered && (
-        <div className="max-w-auto absolute left-0 top-full z-50 !w-[550px] opacity-100 shadow-lg transition-all duration-200">
+        <div className="max-w-auto absolute left-[23%] top-[3rem] z-50 !w-[550px] opacity-100 shadow-lg transition-all duration-200">
           <div className="custom-shadow !w-[650px] rounded-lg border border-[#7d7d7d] bg-black px-4 py-4 text-black shadow-lg !backdrop-blur-[25px]">
             {/* Grid for Content and Images */}
             <div
-              className={`grid  gap-4   ${
+              className={`pt-17  grid  gap-4 pb-20 ${
                 imageCount > 0
                   ? 'items-start justify-center md:grid-cols-2'
                   : 'grid-cols-1'

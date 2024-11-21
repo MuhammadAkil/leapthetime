@@ -1,131 +1,112 @@
 'use client'
-import React from 'react'
-
-import StarLogo from '@/images/avif/leap_the _time_logo.avif'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-// components/Footer.js
-
 import Link from 'next/link'
 import FooterLinks from './FooterLinks'
+import StarLogo from '@/images/avif/leap_the _time_logo.avif'
 
 export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <footer className="body-font   bg-black text-gray-600">
+    <footer className="body-font bg-black text-gray-600">
       <div className="gradient-border"></div>
-      <div className="container  mx-auto flex max-w-7xl flex-col flex-wrap px-5 py-24 md:flex-row md:flex-nowrap md:items-center lg:items-start">
+      <div className="container mx-auto flex max-w-7xl flex-col flex-wrap px-5 py-24 md:flex-row md:flex-nowrap md:items-center lg:items-start">
         <div className="mx-auto w-64 flex-shrink-0 text-center md:mx-0 md:text-left">
           <Link
             href="/"
+            aria-label="Home"
             className="title-font flex items-center justify-center font-medium text-white md:justify-start"
           >
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="h-10 w-10 rounded-full bg-indigo-500 p-2 text-white"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg> */}
-            {/* <span className="ml-3 text-xl">LeapTheLimit</span> */}
-
-            <Link
-              href="#"
-              aria-label="Home"
-              className="flex items-center gap-1"
-            >
-              <Image
-                src={StarLogo}
-                alt="logo"
-                className="w-8 rounded-xl object-cover"
-              />
-
-              <h1 className="text-xl text-white">LeapTheLimit</h1>
-            </Link>
+            <Image
+              src={StarLogo}
+              alt="logo"
+              className="w-8 rounded-xl object-cover"
+            />
+            <h1 className="text-xl text-white">LeapTheLimit</h1>
           </Link>
-          <p className="mt-2 text-sm text-gray-500">
-            All rights reserved, the LeapTheLimit. logo and trademarks may not
-            be used or reproduced consent of the owner.
-          </p>
         </div>
-        <div className="-mb-10 mt-10 flex flex-grow flex-wrap text-center md:mt-0 md:pl-20 md:text-left">
-          {/* {['CATEGORIES', 'CATEGORIES', 'CATEGORIES', 'CATEGORIES'].map(
-            (category, index) => (
-              <div key={index} className="w-full px-4 md:w-1/2 lg:w-1/4">
-                <h2 className="title-font mb-3 text-sm font-medium tracking-widest text-gray-900">
-                  {category}
-                </h2>
-                <nav className="mb-10 list-none">
-                  {[
-                    'AI',
-                    'For Business',
-                    'For Government',
-                    'For Education',
-                    'For Healthcare',
-                  ].map((link, idx) => (
-                    <li key={idx}>
-                      <Link
-                        className="text-gray-600 hover:text-gray-800"
-                        href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                        passHref
-                      >
-                        {link}
-                      </Link>
-                    </li>
-                  ))}
-                </nav>
-              </div>
-            ),
-          )} */}
+        <div className="-mb-10 mt-10 flex flex-grow flex-wrap text-center md:mt-0 md:pl-0 md:text-left">
           <FooterLinks />
         </div>
       </div>
       <div className="border-t border-[#ffffff1a] py-5">
-        <div className="container mx-auto flex max-w-7xl flex-col flex-wrap justify-between px-5 py-4 sm:flex-row">
-          <div className="mt-2 inline-flex justify-center  sm:mt-0 sm:justify-start">
-            {/* {['facebook', 'twitter', 'instagram', 'linkedin'].map(
-              (platform, idx) => (
-                <a key={idx} href="#" className="ml-3 text-gray-500">
-                  <svg
-                    fill="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="h-5 w-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d={
-                        platform === 'facebook'
-                          ? 'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z'
-                          : platform === 'twitter'
-                            ? 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z'
-                            : platform === 'instagram'
-                              ? 'M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01'
-                              : 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM2 9h4v12H2z'
-                      }
-                    ></path>
-                  </svg>
-                </a>
-              ),
-            )} */}
-            <ul className="flex gap-5">
-              <li>
-                <Link href={'/'}>Terms of Services</Link>
-              </li>
-              <li>
-                <Link href={'/'}>Privacy Policy</Link>
-              </li>
-            </ul>
+        <div className="container mx-auto flex max-w-7xl flex-col flex-wrap justify-evenly px-5 py-4 sm:flex-row">
+          <div className="mt-2 inline-flex justify-center sm:mt-0 sm:justify-start">
+            <div className="divide-2 flex items-center gap-3 divide-x !divide-[#363636]">
+              <Link
+                href="/"
+                className=" text-sm text-[#ffffffb3] hover:text-white lg:px-3"
+              >
+                Terms of Services
+              </Link>
+              <Link
+                href="/"
+                className=" text-xs text-[#ffffffb3] hover:text-white lg:px-3"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/"
+                className="text-sx flex items-center gap-1 px-3 text-sm text-[#ffffffb3]"
+              >
+                English{' '}
+                <svg
+                  height="24"
+                  viewBox="0 0 24 24"
+                  className="fill-[#ffffffb3]"
+                >
+                  <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                </svg>
+              </Link>
+            </div>
           </div>
-          <p className="text-center text-sm text-gray-500 sm:text-left">
+          <p className="mt-10 text-center text-sm text-[#ffffffb3] sm:text-left lg:mt-0 ">
             © 2024 LeapTheLimit Inc.
           </p>
         </div>
       </div>
+      {isVisible && (
+        <button
+          className={`custom-shadow gradient-text-left fixed bottom-[5rem] right-4 flex items-center gap-1 rounded-full border bg-black px-4 py-[2px] text-white transition-opacity duration-300 ${
+            isVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          To the top
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            className="fill-current text-white"
+          >
+            <path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z"></path>
+          </svg>
+        </button>
+      )}
     </footer>
   )
 }

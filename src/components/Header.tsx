@@ -270,7 +270,7 @@ export function Header() {
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <Button href="/register" className="flex items-center gap-2">
               <span>Request Demo </span>
-              <span className="inline rotate-[-45deg]">
+              <span className="inline hidden rotate-[-45deg] md:block">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
