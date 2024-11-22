@@ -11,6 +11,7 @@ import { NavLink } from '@/components/NavLink'
 import AI from '@/images/avif/hope-ai.avif'
 import StarLogo from '@/images/avif/leap_the _time_logo.avif'
 import Image from 'next/image'
+import { title } from 'process'
 
 function MobileNavLink({
   href,
@@ -72,7 +73,7 @@ function MobileNavigation() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="fixed inset-0 bg-slate-300/50" />
+          <Popover.Overlay className="fixed inset-0" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -85,7 +86,7 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
+            className="absolute inset-x-0 top-full mt-[0.8rem] flex w-full origin-top flex-col bg-black p-4 text-lg tracking-tight text-white shadow-xl ring-1 ring-slate-900/5"
           >
             <MobileNavLink href="#features">Features</MobileNavLink>
             <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
@@ -104,34 +105,28 @@ export function Header() {
     Products: {
       content: [
         {
-          name: 'Product 1',
+          title: 'AI',
+          name: 'For Business',
           icon: '🛠️',
-          description: 'This is product 1',
+          description: 'Drive Growth',
         },
         {
-          name: 'Product 2',
+          title: 'AI',
+          name: 'For Government',
           icon: '📦',
-          description: 'This is product 2',
+          description: 'Smarter Policy Decision',
         },
         {
-          name: 'Product 3',
+          title: 'AI',
+          name: 'For Eduction',
           icon: '🔧',
-          description: 'This is product 3',
+          description: 'Empower student and teachers',
         },
         {
-          name: 'Product 4',
+          title: 'AI',
+          name: 'For Healthcare',
           icon: '🛠️',
-          description: 'This is product 4',
-        },
-        {
-          name: 'Product 5',
-          icon: '🔧',
-          description: 'This is product 3',
-        },
-        {
-          name: 'Product 6',
-          icon: '🛠️',
-          description: 'This is product 4',
+          description: 'Accelerate Diagnosis, Improve Accuracy',
         },
       ],
       images: [
@@ -190,38 +185,58 @@ export function Header() {
     Resources: {
       content: [
         {
-          name: 'AI Tool 1',
+          name: 'Academy',
           icon: '🤖',
-          description: 'This is AI tool 1',
+          description: 'upskill your team ',
         },
         {
-          name: 'AI Tool 2',
+          name: 'e-Book',
           icon: '🔍',
-          description: 'This is AI tool 2',
+          description: 'download & learn',
+        },
+        {
+          name: 'Blog',
+          icon: '🔍',
+          description: 'insights & inspiration',
+        },
+        {
+          name: 'Trending',
+          icon: '🔍',
+          description: 'hot topics  in AI',
+        },
+        {
+          name: 'Research Lab',
+          icon: '🔍',
+          description: 'explore our breakthroughs',
+        },
+        {
+          name: 'Help Center',
+          icon: '🔍',
+          description: 'find answers fast',
         },
       ],
-      images: [AI],
+      images: [],
     },
     Workshops: {
       content: [
-        {
-          name: 'AI Tool 1',
-          icon: '🤖',
-          description: 'This is AI tool 1',
-        },
-        {
-          name: 'AI Tool 2',
-          icon: '🔍',
-          description: 'This is AI tool 2',
-        },
+        // {
+        //   name: 'AI Tool 1',
+        //   icon: '🤖',
+        //   description: 'This is AI tool 1',
+        // },
+        // {
+        //   name: 'AI Tool 2',
+        //   icon: '🔍',
+        //   description: 'This is AI tool 2',
+        // },
       ],
-      images: [AI],
+      images: [],
     },
     // Add more categories if needed, following the same structure
   }
 
   return (
-    <header className="fixed z-[100] w-full border-b border-[#ffffff1a] py-3 backdrop-blur-[25px]">
+    <header className="fixed z-[100] w-full border-b border-[#ffffff1a] bg-black py-3 lg:bg-transparent lg:backdrop-blur-[25px]">
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
@@ -241,34 +256,26 @@ export function Header() {
           </div>
           <div className="flex items-center md:gap-x-12">
             <div className="hidden text-[#ffffff96] md:flex md:gap-x-8">
-              <NavLink href="#features" megaMenuContent={megaMenuData.AI}>
+              {/* <NavLink href="#features" megaMenuContent={megaMenuData.AI}>
                 AI
-              </NavLink>
-              <NavLink href="#features" megaMenuContent={megaMenuData.Products}>
+              </NavLink> */}
+              <NavLink href="#" megaMenuContent={megaMenuData.Products}>
                 Products
               </NavLink>
-              <NavLink
-                href="#testimonials"
-                megaMenuContent={megaMenuData.Company}
-              >
+              <NavLink href="#" megaMenuContent={megaMenuData.Company}>
                 Company
               </NavLink>
-              <NavLink
-                href="#pricing"
-                megaMenuContent={megaMenuData?.Resources}
-              >
+              <NavLink href="#" megaMenuContent={megaMenuData?.Resources}>
                 Resources
               </NavLink>
-              <NavLink
-                href="#pricing"
-                megaMenuContent={megaMenuData?.Workshops}
-              >
-                Workshops
-              </NavLink>
+              <NavLink href="#">Workshops</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-            <Button href="/register" className="flex items-center gap-2">
+            <Button
+              href="/register"
+              className="hidden items-center gap-2 lg:flex"
+            >
               <span>Request Demo </span>
               <span className="inline hidden rotate-[-45deg] md:block">
                 <svg

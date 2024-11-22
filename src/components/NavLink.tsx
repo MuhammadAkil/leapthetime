@@ -7,6 +7,7 @@ interface MegaMenuItem {
   name?: string
   icon?: string
   description?: string
+  title?: string
 }
 
 interface MegaMenuContent {
@@ -17,7 +18,7 @@ interface MegaMenuContent {
 interface NavLinkProps {
   href: string
   children: React.ReactNode
-  megaMenuContent: MegaMenuContent
+  megaMenuContent?: MegaMenuContent // Make it optional
 }
 
 export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
@@ -28,16 +29,20 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
     if (timerRef.current) {
       clearTimeout(timerRef.current)
     }
-    setIsHovered(true)
+    if (megaMenuContent) {
+      setIsHovered(true)
+    }
   }
 
   const handleMouseLeave = () => {
-    timerRef.current = setTimeout(() => {
-      setIsHovered(false)
-    }, 100)
+    if (megaMenuContent) {
+      timerRef.current = setTimeout(() => {
+        setIsHovered(false)
+      }, 100)
+    }
   }
 
-  const imageCount = megaMenuContent.images.length
+  const imageCount = megaMenuContent?.images.length || 0
 
   return (
     <div
@@ -54,20 +59,20 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
         {children}
       </Link>
 
-      {isHovered && (
-        <div className="max-w-auto absolute left-[23%] top-[3rem] z-50 !w-[550px] opacity-100 shadow-lg transition-all duration-200">
-          <div className="custom-shadow !w-[650px] rounded-lg border border-[#7d7d7d] bg-black px-4 py-4 text-black shadow-lg !backdrop-blur-[25px]">
+      {isHovered && megaMenuContent && (
+        <div className="max-w-auto absolute left-[21%] top-[3rem] z-50 !w-[550px] opacity-100 shadow-lg !backdrop-blur-[25px] transition-all duration-200">
+          <div className="custom-shadow min-w-[700px] rounded-lg border border-[#7d7d7d] bg-black px-4 py-4 !text-black shadow-lg !backdrop-blur-[25px]">
             {/* Grid for Content and Images */}
             <div
-              className={`pt-17  grid  gap-4 pb-20 ${
+              className={`grid gap-4 px-4 pb-20 pt-6 ${
                 imageCount > 0
-                  ? 'items-start justify-center md:grid-cols-2'
+                  ? 'items-start justify-center md:grid-cols-3'
                   : 'grid-cols-1'
               }`}
             >
               {/* Content Grid */}
-              <div className="col-span-2 md:col-span-1">
-                <div className="grid grid-cols-2 gap-2">
+              <div className="col-span-2">
+                <div className="grid grid-cols-2 gap-10">
                   {megaMenuContent.content.map((item, index) => (
                     <div
                       key={index}
@@ -75,15 +80,27 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
                     >
                       {/* Display content (icon, name, description) if available */}
                       {item.name && (
-                        <div className="flex cursor-pointer  items-start gap-1 rounded-lg p-4 py-1 pe-4 ps-1 hover:bg-white/30">
-                          <div className="text-xl">{item.icon}</div>
-                          <div className="flex flex-col">
-                            <div className="text-sm font-semibold text-white">
-                              {item.name}
+                        <div className="flex cursor-pointer flex-col rounded-lg">
+                          {/* Title */}
+                          <div className="text-gray-custom ps-[3rem] text-sm font-normal">
+                            {item.title}
+                          </div>
+
+                          <div className="flex gap-3 rounded p-1 hover:bg-white/30">
+                            {/* Icon */}
+                            <span className="flex h-[36px] items-center justify-center rounded-md border border-[#7d7d7d] p-1.5 text-sm">
+                              {item.icon}
+                            </span>
+
+                            {/* Name and Description */}
+                            <div className="flex flex-col gap-0">
+                              <div className="-my-[2px] text-sm font-semibold text-gray-300">
+                                {item.name}
+                              </div>
+                              <small className="text-gray-custom whitespace-nowrap text-[12px] font-normal">
+                                {item.description}
+                              </small>
                             </div>
-                            <small className="whitespace-nowrap text-[10px] font-normal text-white">
-                              {item.description}
-                            </small>
                           </div>
                         </div>
                       )}
@@ -93,7 +110,7 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
               </div>
 
               {/* Image Grid */}
-              <div className="col-span-1 ms-5 flex items-center justify-center ps-7">
+              <div className="col-span-1 flex items-center justify-center">
                 <div
                   className={`flex gap-2 ${
                     imageCount >= 2
@@ -107,14 +124,14 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
                         key={index}
                         src={image}
                         alt={`Image ${index + 1}`}
-                        className="h-40 w-64 "
+                        className="h-40 w-52"
                       />
                     ) : (
                       <Image
                         key={index}
                         src={image}
                         alt={`Image ${index + 1}`}
-                        className=" h-40 w-64 rounded-xl object-cover"
+                        className=" h-36 w-48 rounded-xl object-cover"
                       />
                     ),
                   )}

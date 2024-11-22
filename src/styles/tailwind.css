@@ -22,7 +22,9 @@
     rgba(0, 0, 0, 0.25) 0px 5px 10px 0px,     /* Outer shadow: Small blur */
     rgba(204, 215, 255, 0.15) 0px 0px 100px 0px inset;  /* Inset shadow */
 }
-
+.text-gray-custom{
+  color:#ffffff96
+}
   
 }
 html{
