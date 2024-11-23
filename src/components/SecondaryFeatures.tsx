@@ -236,7 +236,7 @@ export function SecondaryFeatures() {
           <p className="mt-4 text-lg tracking-tight text-[#ffffff96]">
             LeapTheLimit
           </p>
-          <h2 className="font-display text-3xl tracking-tight text-[#ffffff96] sm:text-4xl">
+          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             Powering Every Profession into <br className="hidden lg:block" />
             the Future
           </h2>

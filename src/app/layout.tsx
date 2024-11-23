@@ -1,8 +1,11 @@
-import { Inter, Lexend } from 'next/font/google'
+import { Inter, Lexend, Montserrat } from 'next/font/google'
 import clsx from 'clsx'
 
+// import '@/styles/tailwind.css'
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
+import { Header } from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -23,6 +26,11 @@ const lexend = Lexend({
   display: 'swap',
   variable: '--font-lexend',
 })
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+})
 
 export default function RootLayout({
   children,
@@ -34,11 +42,14 @@ export default function RootLayout({
       lang="en"
       className={clsx(
         'h-full scroll-smooth bg-white antialiased',
-        inter.variable,
-        lexend.variable,
+        montserrat.variable,
       )}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <body className="flex h-full flex-col">
+        <Header />
+        <main className="!bg-[#000]">{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }

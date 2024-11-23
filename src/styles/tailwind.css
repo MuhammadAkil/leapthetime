@@ -15,6 +15,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .bg-primary-color{
+    background-color: #006FE8;
+  }
+  .text-primary-color{
+    color: #006FE8;
+  }
 .custom-shadow {
   box-shadow: 
     rgba(0, 0, 0, 0.25) 0px 30px 60px 0px,    /* Outer shadow: Large blur */
@@ -25,6 +31,7 @@
 .text-gray-custom{
   color:#ffffff96
 }
+
   
 }
 html{
@@ -43,4 +50,15 @@ body{
    background:  linear-gradient(-90deg, #ffffff00 0%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0) 100%);
     top: 10px;
     opacity: .3;
+}@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 5s linear infinite;
 }

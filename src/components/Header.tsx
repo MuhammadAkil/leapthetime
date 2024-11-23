@@ -109,53 +109,31 @@ export function Header() {
           name: 'For Business',
           icon: '🛠️',
           description: 'Drive Growth',
+          link: 'for-business',
         },
         {
           title: 'AI',
           name: 'For Government',
           icon: '📦',
           description: 'Smarter Policy Decision',
+          link: 'for-government',
         },
         {
           title: 'AI',
-          name: 'For Eduction',
+          name: 'For Education',
           icon: '🔧',
-          description: 'Empower student and teachers',
+          description: 'Empower students and teachers',
+          link: 'for-education',
         },
         {
           title: 'AI',
           name: 'For Healthcare',
           icon: '🛠️',
           description: 'Accelerate Diagnosis, Improve Accuracy',
+          link: 'for-healthcare',
         },
       ],
-      images: [
-        //  'https://via.placeholder.com/150?text=Product+1',
-        //  'https://via.placeholder.com/150?text=Product+2',
-        //  'https://via.placeholder.com/150?text=Product+3',
-        //  'https://via.placeholder.com/150?text=Product+4',
-      ],
-    },
-    AI: {
-      content: [
-        // {
-        //   name: 'AI Tool 1',
-        //   icon: '🤖',
-        //   description: 'This is AI tool 1',
-        // },
-        // {
-        //   name: 'AI Tool 2',
-        //   icon: '🔍',
-        //   description: 'This is AI tool 2',
-        // },
-      ],
-      images: [
-        AI,
-        // 'https://via.placeholder.com/150?text=AI+Tool+1',
-        // 'https://via.placeholder.com/150?text=AI+Tool+2',
-        //  'https://via.placeholder.com/150?text=Product+3',
-        //  'https://via.placeholder.com/150?text=Product+4',
-      ],
+      images: [],
     },
     Company: {
       content: [
@@ -163,76 +141,87 @@ export function Header() {
           name: 'About',
           icon: '🤖',
           description: 'Learn who we are',
+          link: 'about',
         },
         {
           name: 'Contact',
           icon: '🔍',
           description: 'Get in touch',
+          link: 'contact',
         },
         {
           name: 'Careers',
           icon: '🤖',
-          description: 'Explore open position',
+          description: 'Explore open positions',
+          link: 'careers',
         },
         {
           name: 'Newsroom',
           icon: '🔍',
-          description: 'Latest annocuments',
+          description: 'Latest announcements',
+          link: 'newsroom',
         },
       ],
-      images: [AI],
+      images: [],
     },
     Resources: {
       content: [
         {
           name: 'Academy',
           icon: '🤖',
-          description: 'upskill your team ',
+          description: 'Upskill your team',
+          link: '/academy',
         },
         {
           name: 'e-Book',
           icon: '🔍',
-          description: 'download & learn',
+          description: 'Download & learn',
+          link: '/e-book',
         },
         {
           name: 'Blog',
           icon: '🔍',
-          description: 'insights & inspiration',
+          description: 'Insights & inspiration',
+          link: '/blog',
         },
         {
           name: 'Trending',
           icon: '🔍',
-          description: 'hot topics  in AI',
+          description: 'Hot topics in AI',
+          link: '/trending',
         },
         {
           name: 'Research Lab',
           icon: '🔍',
-          description: 'explore our breakthroughs',
+          description: 'Explore our breakthroughs',
+          link: '/research-lab',
         },
         {
           name: 'Help Center',
           icon: '🔍',
-          description: 'find answers fast',
+          description: 'Find answers fast',
+          link: '/help-center',
         },
       ],
       images: [],
     },
     Workshops: {
       content: [
-        // {
-        //   name: 'AI Tool 1',
-        //   icon: '🤖',
-        //   description: 'This is AI tool 1',
-        // },
-        // {
-        //   name: 'AI Tool 2',
-        //   icon: '🔍',
-        //   description: 'This is AI tool 2',
-        // },
+        //  {
+        //    name: 'AI Workshop 1',
+        //    icon: '🤖',
+        //    description: 'Learn advanced AI techniques',
+        //    link: '/workshop',
+        //  },
+        //  {
+        //    name: 'AI Workshop 2',
+        //    icon: '🔍',
+        //    description: 'Introduction to AI tools',
+        //    link: '/workshop',
+        //  },
       ],
       images: [],
     },
-    // Add more categories if needed, following the same structure
   }
 
   return (
@@ -241,7 +230,7 @@ export function Header() {
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link
-              href="#"
+              href="/"
               aria-label="Home"
               className="flex items-center gap-1"
             >

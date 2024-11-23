@@ -17,7 +17,7 @@ export function UnstoppableWithAi() {
       <div className="mt-10 flex justify-center gap-x-6">
         <Button
           href="/register"
-          className="group-active:fill-curren flex w-[280px] items-center gap-2 !p-3 text-[#ffffff96]"
+          className="group-active:fill-curren flex w-[280px] items-center gap-2 !p-3 text-[#ffffff96] hover:bg-white/80"
           variant="outline"
         >
           Get Started
