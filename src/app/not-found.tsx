@@ -22,16 +22,18 @@ export default function NotFound() {
           <h1 className="text-xl text-white">LeapTheLimit</h1>
         </Link>
       </div> */}
-      <p className="mt-20 text-sm font-medium text-gray-700">404</p>
-      <h1 className="mt-3 text-lg font-semibold text-gray-900">
-        Page not found
-      </h1>
-      <p className="mt-3 text-sm text-gray-700">
-        Sorry, we couldn’t find the page you’re looking for.
-      </p>
-      <Button href="/" className="mt-10">
+      <div className="custom-shadow bg-white/9 border-[fixed lg:backdrop-blur-[25px]] z-[100] flex w-full flex-col items-center justify-center rounded-xl border border-b border-[#ffffff1a] bg-black p-8 py-3 backdrop-blur-[25px] md:p-12 lg:bg-transparent">
+        <h1 className="text-primary-color mt-3 text-3xl font-semibold ">404</h1>
+        <h2 className="mt-3 text-lg font-semibold text-white">
+          Page not found
+        </h2>
+        <p className="mt-3 text-center text-sm text-gray-700">
+          Sorry, we couldn’t find the page you’re looking for.
+        </p>
+      </div>
+      {/* <Button href="/" className="mt-10">
         Go back home
-      </Button>
+      </Button> */}
     </SlimLayout>
   )
 }
