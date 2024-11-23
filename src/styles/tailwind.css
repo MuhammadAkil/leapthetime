@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root{
-  --primary-color: #3498db;
+  --primary-color: #006FE8;
 }
 
 @layer utilities {
@@ -20,7 +20,7 @@
     -webkit-text-fill-color: transparent;
   }
   .bg-primary-color{
-    background-color: #006FE8;
+    background-color: #006FE8 !important;
   }
   .text-primary-color{
     color: #006FE8;

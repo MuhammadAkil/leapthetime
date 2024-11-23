@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { useId } from 'react'
 
 const formClasses =
-  'block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-white placeholder-black focus:border-[] focus:bg-white focus:outline-none focus:ring-[] sm:text-sm'
+  'block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-white placeholder-black focus:border-[--primary-color] focus:bg-white focus:outline-none focus:ring-[--primary-color] sm:text-sm'
 
 function Label({ id, children }: { id: string; children: React.ReactNode }) {
   return (
