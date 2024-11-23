@@ -55,6 +55,42 @@ function MobileNavIcon({ open }: { open: boolean }) {
 }
 
 function MobileNavigation() {
+  const megaMenuData = [
+    {
+      title: 'AI',
+      content: [
+        { tname: 'For Business', link: 'for-business' },
+        { tname: 'For Government', link: 'for-government' },
+        { tname: 'For Education', link: 'for-education' },
+        { tname: 'For Healthcare', link: 'for-healthcare' },
+      ],
+    },
+    {
+      title: 'Company',
+      content: [
+        { tname: 'About', link: 'about' },
+        { tname: 'Contact', link: 'contact' },
+        { tname: 'Careers', link: 'careers' },
+        { tname: 'Newsroom', link: 'newsroom' },
+      ],
+    },
+    {
+      title: 'Resources',
+      content: [
+        { tname: 'Academy', link: '/academy' },
+        { tname: 'e-Book', link: '/e-book' },
+        { tname: 'Blog', link: '/blog' },
+        { tname: 'Trending', link: '/trending' },
+        { tname: 'Research Lab', link: '/research-lab' },
+        { tname: 'Help Center', link: '/help-center' },
+      ],
+    },
+    {
+      title: 'Workshops',
+      content: [],
+    },
+  ]
+
   return (
     <Popover>
       <Popover.Button
@@ -86,19 +122,38 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="absolute inset-x-0 top-full mt-[0.8rem] flex w-full origin-top flex-col bg-black p-4 text-lg tracking-tight text-white shadow-xl ring-1 ring-slate-900/5"
+            className="absolute inset-x-0 top-full mt-[0.8rem] flex h-[90svh] w-full origin-top flex-col overflow-y-scroll bg-black p-4 text-lg tracking-tight text-white shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="#features">Features</MobileNavLink>
-            <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
-            <MobileNavLink href="#pricing">Pricing</MobileNavLink>
-            <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/">Sign in</MobileNavLink>
+            {megaMenuData.map((section, index) => (
+              <div
+                key={index}
+                className="mt-3 flex flex-col divide-y divide-slate-300/40"
+              >
+                <p className="text-gray-custom my-5 text-sm font-semibold">
+                  {section.title}
+                </p>
+                {
+                  section.content.length > 0
+                    ? section.content.map((item, idx) => (
+                        <MobileNavLink key={idx} href={item.link}>
+                          {item.tname}
+                          {/* <hr className="m-2 border-slate-300/40" /> */}
+                        </MobileNavLink>
+                      ))
+                    : ''
+                  // <p className="text-sm italic text-gray-400">
+                  //   No items available.
+                  // </p>
+                }
+              </div>
+            ))}
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
     </Popover>
   )
 }
+
 
 export function Header() {
   const megaMenuData = {

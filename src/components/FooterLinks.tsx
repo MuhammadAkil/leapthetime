@@ -35,7 +35,7 @@ export default function FooterLinks() {
         </h6>
         <nav className="mb-10 list-none">
           {firstLinks.map((link, idx) => (
-            <li key={idx} className="pb-5">
+            <li key={idx} className="pb-3">
               <Link
                 className="whitespace-pre text-[13px] leading-[20px] text-[#ffffffb3] hover:text-white hover:underline"
                 href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
@@ -55,7 +55,7 @@ export default function FooterLinks() {
         </h6>
         <nav className="mb-10 list-none">
           {secondLinks.map((link, idx) => (
-            <li key={idx} className="pb-5">
+            <li key={idx} className="pb-3">
               <Link
                 className="whitespace-pre text-[13px] leading-[20px]	text-[#ffffffb3] hover:text-white hover:underline"
                 href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
@@ -75,7 +75,7 @@ export default function FooterLinks() {
         </h6>
         <nav className="mb-10 list-none">
           {thirdLinks.map((link, idx) => (
-            <li key={idx} className="pb-5">
+            <li key={idx} className="pb-3">
               <Link
                 className="whitespace-pre text-[13px] leading-[20px]	text-[#ffffffb3] hover:text-white hover:underline"
                 href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
@@ -95,7 +95,7 @@ export default function FooterLinks() {
         </h6>
         <nav className="mb-10 list-none">
           {fourthLinks.map((link, idx) => (
-            <li key={idx} className="pb-5">
+            <li key={idx} className="pb-3">
               <Link
                 className="whitespace-pre text-[13px] leading-[20px]	text-[#ffffffb3] hover:text-white hover:underline"
                 href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}

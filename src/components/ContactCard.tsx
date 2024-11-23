@@ -32,7 +32,7 @@ export default function InfoCard({
         )}
         <span className="flex w-full items-center gap-2 ">
           {description && (
-            <p className="w-[40ch] text-sm leading-relaxed text-gray-400">
+            <p className="text-sm leading-relaxed text-gray-400 lg:w-[40ch]">
               {description}
               <Link
                 href={`mailto:${email}`}
@@ -54,14 +54,6 @@ export default function InfoCard({
             {phone}
           </Link>
         )}
-        {/* {email && (
-          <Link
-            href={`mailto:${email}`}
-            className="mt-2 text-sm text-[#006FE8]"
-          >
-            {email}
-          </Link>
-        )} */}
         {mapButton && mapLink && (
           <Button
             target="_blank"
