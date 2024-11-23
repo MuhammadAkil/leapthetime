@@ -1,8 +1,5 @@
 'use client'
 
-// import { Button } from '@/components/Button'
-// import { Container } from '@/components/Container'
-// import { Metadata } from 'next'
 import Image from 'next/image'
 import AboutUs from '@/images/avif/about-us.avif'
 

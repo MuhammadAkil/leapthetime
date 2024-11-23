@@ -8,7 +8,6 @@ import StarLogo from '@/images/avif/leap_the _time_logo.avif'
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false)
 
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }

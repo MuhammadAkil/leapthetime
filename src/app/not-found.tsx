@@ -1,12 +1,6 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
-
-import { Button } from '@/components/Button'
-import { Logo } from '@/components/Logo'
 import { SlimLayout } from '@/components/SlimLayout'
-import StarLogo from '@/images/avif/leap_the _time_logo.avif'
 
 export default function NotFound() {
   return (

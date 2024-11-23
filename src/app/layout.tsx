@@ -1,7 +1,6 @@
 import { Inter, Lexend, Montserrat } from 'next/font/google'
 import clsx from 'clsx'
 
-// import '@/styles/tailwind.css'
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
 import { Header } from '@/components/Header'

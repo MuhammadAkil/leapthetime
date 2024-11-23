@@ -59,30 +59,30 @@ function MobileNavigation() {
     {
       title: 'AI',
       content: [
-        { tname: 'For Business', link: 'for-business' },
-        { tname: 'For Government', link: 'for-government' },
-        { tname: 'For Education', link: 'for-education' },
-        { tname: 'For Healthcare', link: 'for-healthcare' },
+        { name: 'For Business', link: 'for-business' },
+        { name: 'For Government', link: 'for-government' },
+        { name: 'For Education', link: 'for-education' },
+        { name: 'For Healthcare', link: 'for-healthcare' },
       ],
     },
     {
       title: 'Company',
       content: [
-        { tname: 'About', link: 'about' },
-        { tname: 'Contact', link: 'contact' },
-        { tname: 'Careers', link: 'careers' },
-        { tname: 'Newsroom', link: 'newsroom' },
+        { name: 'About', link: 'about' },
+        { name: 'Contact', link: 'contact' },
+        { name: 'Careers', link: 'careers' },
+        { name: 'Newsroom', link: 'newsroom' },
       ],
     },
     {
       title: 'Resources',
       content: [
-        { tname: 'Academy', link: '/academy' },
-        { tname: 'e-Book', link: '/e-book' },
-        { tname: 'Blog', link: '/blog' },
-        { tname: 'Trending', link: '/trending' },
-        { tname: 'Research Lab', link: '/research-lab' },
-        { tname: 'Help Center', link: '/help-center' },
+        { name: 'Academy', link: '/academy' },
+        { name: 'e-Book', link: '/e-book' },
+        { name: 'Blog', link: '/blog' },
+        { name: 'Trending', link: '/trending' },
+        { name: 'Research Lab', link: '/research-lab' },
+        { name: 'Help Center', link: '/help-center' },
       ],
     },
     {
@@ -132,19 +132,14 @@ function MobileNavigation() {
                 <p className="text-gray-custom my-5 text-sm font-semibold">
                   {section.title}
                 </p>
-                {
-                  section.content.length > 0
-                    ? section.content.map((item, idx) => (
-                        <MobileNavLink key={idx} href={item.link}>
-                          {item.tname}
-                          {/* <hr className="m-2 border-slate-300/40" /> */}
-                        </MobileNavLink>
-                      ))
-                    : ''
-                  // <p className="text-sm italic text-gray-400">
-                  //   No items available.
-                  // </p>
-                }
+                {section.content.length > 0
+                  ? section.content.map((item, idx) => (
+                      <MobileNavLink key={idx} href={item.link}>
+                        {item.name}
+                        {/* <hr className="m-2 border-slate-300/40" /> */}
+                      </MobileNavLink>
+                    ))
+                  : ''}
               </div>
             ))}
           </Popover.Panel>

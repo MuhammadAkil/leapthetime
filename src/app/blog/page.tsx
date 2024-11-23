@@ -1,10 +1,8 @@
 'use client'
 
 import { Container } from '@/components/Container'
-import { Metadata } from 'next'
 import Image from 'next/image'
 import Blog from '@/images/avif/blog.avif'
-import { Button } from '@/components/Button'
 import Link from 'next/link'
 
 export default function blog() {

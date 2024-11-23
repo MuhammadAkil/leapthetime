@@ -1,9 +1,4 @@
-// 'use client'
-
 import { CallToAction } from '@/components/CallToAction'
-import Footer from '@/components/Footer'
-// import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { Integration } from '@/components/Integrations'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
@@ -16,7 +11,6 @@ import { WhyLeapTheLimit } from '@/components/WhyLeapTheLimit'
 export default function Home() {
   return (
     <>
-      {/* <Header /> */}
       <Hero />
       <WeeklySummary />
       <PrimaryFeatures />
@@ -26,43 +20,6 @@ export default function Home() {
       <Integration />
       <UnstoppableWithAi />
       <TrustedClient />
-      {/* <Footer /> */}
     </>
   )
-}
-{
-  /* my folder structure is src/auth for login and register page and in src there is three pages like layout.tsx, not-found .tsx, and page.tsx in the page.tsx im showing
-  export default function Home() {
-  return (
-    <>
-      <Header />
-      <main className="!bg-[#000]">
-        <Hero />
-        <WeeklySummary />
-        <PrimaryFeatures />
-        <SecondaryFeatures />
-        <CallToAction />
-        <WhyLeapTheLimit />
-        <Integration />
-        <UnstoppableWithAi />
-        <TrustedClient />
-      </main>
-      <Footer />
-    </>
-  )
-}  
-in the src there is another folder name components and in the components there is all these components files like <Hero />
-        <WeeklySummary />
-        <PrimaryFeatures />
-        <SecondaryFeatures />
-        <CallToAction />
-        <WhyLeapTheLimit />
-        <Integration />
-        <UnstoppableWithAi />
-        <TrustedClient />
-
-        now i want to route another pages like about, contact, and blog and i want to keep the same structure like the home page
-
-        how can i do this
-*/
 }
