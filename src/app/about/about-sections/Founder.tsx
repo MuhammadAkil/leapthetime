@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import Founders from '@/images/avif/Founders.avif'
+// import Founders from '@/images/avif/Founders.avif'
 
 export default function Founder() {
   return (
@@ -39,7 +39,7 @@ export default function Founder() {
           {/* Image Container */}
           <div className="relative z-10 w-full">
             <Image
-              src={Founders}
+              src="/images/avif/Founders.avif"
               alt="AI for everyone"
               className="w-full rounded-xl border object-cover"
             />
