@@ -122,12 +122,12 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="absolute inset-x-0 top-full mt-[0.8rem] flex h-[90svh] w-full origin-top flex-col overflow-y-scroll bg-black p-4 text-lg tracking-tight text-white shadow-xl ring-1 ring-slate-900/5"
+            className="absolute left-[-16px] top-full mt-[0.8rem] flex h-[90svh] w-[106%] origin-top flex-col overflow-y-scroll bg-black p-4 text-lg tracking-tight text-white shadow-xl ring-1 ring-slate-900/5"
           >
             {megaMenuData.map((section, index) => (
               <div
                 key={index}
-                className="mt-3 flex flex-col divide-y divide-slate-300/40"
+                className="mt-3 flex flex-col divide-y divide-[70%] divide-slate-300/40"
               >
                 <p className="text-gray-custom my-5 text-sm font-semibold">
                   {section.title}
@@ -148,7 +148,6 @@ function MobileNavigation() {
     </Popover>
   )
 }
-
 
 export function Header() {
   const megaMenuData = {
@@ -328,7 +327,7 @@ export function Header() {
                 </svg>
               </span>
             </Button>
-            <div className="-mr-1 md:hidden">
+            <div className="mr-[0.75rem] md:hidden">
               <MobileNavigation />
             </div>
           </div>
