@@ -1,7 +1,6 @@
 'use client'
 
 import { Container } from '@/components/Container'
-import Link from 'next/link'
 interface InfoCardProps {
   icon: JSX.Element
   title: string
@@ -21,20 +20,12 @@ function InfoCard({ icon, title, description }: InfoCardProps) {
         <p className="text-sm leading-relaxed text-[#ffffff96]">
           {description}
         </p>
-        <Link
-          href="/blog/blog-details"
-          passHref
-          className="mt-4 inline-block text-sm font-medium text-indigo-500 underline hover:text-indigo-700"
-        >
-          Read More
-        </Link>
       </div>
     </div>
-  );
+  )
 }
 
-
-export default function Blog() {
+export default function BlogDetails() {
   return (
     <Container className="pb-16 pt-20 lg:py-32">
       <section className="body-font h-auto max-w-[1223px] overflow-visible !rounded-xl border border-solid border-white/15 text-gray-600 shadow-[rgba(0,0,0,0.25)_0px_30px_60px_0px,_rgba(0,0,0,0.25)_0px_15px_30px_0px,_rgba(0,0,0,0.25)_0px_5px_10px_0px,_rgba(204,215,255,0.15)_0px_0px_100px_0px_inset] backdrop-blur-[25px]">
