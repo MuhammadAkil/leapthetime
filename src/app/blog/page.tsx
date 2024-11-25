@@ -2,27 +2,33 @@
 
 import { Container } from '@/components/Container'
 import Link from 'next/link'
+import Image from 'next/image';
+import coverImage from '@/images/avif/cover.webp'
 interface InfoCardProps {
   icon: JSX.Element
   title: string
   description: string
 }
 
-function InfoCard({ icon, title, description }: InfoCardProps) {
+function InfoCard({ title, description }: InfoCardProps) {
   return (
     <div className="p-4 md:w-1/2 xl:w-1/3">
       <div className="rounded-lg p-6">
-        <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-indigo-500">
-          {icon}
+        <div className="mb-4 h-40 w-full overflow-hidden rounded-lg">
+          <Image
+           src={coverImage}
+            alt={title}
+            className="h-full w-full object-cover"
+            width={160} 
+            height={160} 
+          />
         </div>
         <h2 className="title-font mb-2 text-lg font-medium text-[#ffffff96]">
           {title}
         </h2>
-        <p className="text-sm leading-relaxed text-[#ffffff96]">
-          {description}
-        </p>
+        <p className="text-sm leading-relaxed text-[#ffffff96]">{description}</p>
         <Link
-          href="/blog/blog-details"
+          href="/blog/blogdetails"
           passHref
           className="mt-4 inline-block text-sm font-medium text-indigo-500 underline hover:text-indigo-700"
         >
@@ -32,7 +38,6 @@ function InfoCard({ icon, title, description }: InfoCardProps) {
     </div>
   );
 }
-
 
 export default function Blog() {
   return (
