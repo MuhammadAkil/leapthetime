@@ -88,7 +88,7 @@ export default function Footer() {
       </div>
       {isVisible && (
         <button
-          className={`custom-shadow gradient-text-left fixed bottom-[5rem] right-4 !z-[99] flex items-center gap-1 rounded-full border bg-black px-4 py-[2px] text-white transition-opacity duration-300 ${
+          className={`custom-shadow gradient-text-left fixed bottom-[5rem] right-4 !z-[99] flex items-center gap-1 rounded-full border bg-black px-4 py-[2px] text-white transition-opacity duration-300 hover:border-[--primary-color] ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
           onClick={scrollToTop}
