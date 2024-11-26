@@ -1,6 +1,7 @@
 'use client'
 
 import { Container } from '@/components/Container'
+import GrowthBusiness from '../app/logos/growth-business'
 interface InfoCardProps {
   icon: JSX.Element
   title: string
@@ -11,7 +12,7 @@ function InfoCard({ icon, title, description }: InfoCardProps) {
   return (
     <div className="p-4 md:w-1/2 xl:w-1/3">
       <div className="rounded-lg p-6">
-        <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-indigo-500">
+        <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-indigo-100 text-indigo-500">
           {icon}
         </div>
         <h2 className="title-font mb-2 text-lg font-medium text-[#ffffff96]">
@@ -44,19 +45,7 @@ export function WhyLeapTheLimit() {
           </span>
           <div className="-m-2 flex flex-wrap">
             <InfoCard
-              icon={
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="h-6 w-6"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                </svg>
-              }
+              icon={<GrowthBusiness />}
               title="Beyond Basic Automation"
               description="We refuse to settle for AI assistants that do the bare minimum. Our AI agents tackle your tedious, boring tasks from start to finish—freeing you to focus on what truly matters."
             />
