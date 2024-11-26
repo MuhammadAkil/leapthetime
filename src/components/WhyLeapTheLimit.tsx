@@ -1,7 +1,7 @@
 'use client'
 
 import { Container } from '@/components/Container'
-import GrowthBusiness from '../app/logos/growth-business'
+import GrowthBusiness from './logos/growth-business'
 interface InfoCardProps {
   icon: JSX.Element
   title: string

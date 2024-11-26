@@ -23,7 +23,7 @@ export function Hero() {
           </svg>
         </span>
       </Button>
-      <h1 className="gradient-text mx-auto max-w-4xl font-display text-[1.5rem] font-medium tracking-tight text-slate-900 sm:text-8xl lg:text-5xl">
+      <h1 className="gradient-text mx-auto max-w-4xl font-display text-[1.5rem] font-medium tracking-tight text-slate-900 sm:text-5xl lg:text-8xl">
         Supercharge <br /> Your Productivity
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-[#ffffff96]">
@@ -34,7 +34,7 @@ export function Hero() {
       <div className="mt-10 flex justify-center gap-x-6">
         <Button
           href="/register"
-          className="group-active:fill-curren hover-text-white flex w-[280px] items-center gap-2 !p-3 text-[#ffffff96]"
+          className="button group-active:fill-curren hover-text-white flex w-[280px] items-center gap-2 !p-3 text-[#ffffff96]"
           variant="outline"
         >
           Request a demo
