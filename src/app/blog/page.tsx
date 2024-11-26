@@ -1,9 +1,9 @@
 'use client'
-
 import { Container } from '@/components/Container'
 import Link from 'next/link'
 import Image from 'next/image'
 import coverImage from '@/images/avif/cover.webp'
+import React from 'react'
 
 interface Blog {
   slug: string
@@ -89,7 +89,7 @@ function InfoCard({
 
         <div className="mt-4 flex items-center justify-between">
           <Link
-            href={`/blog/${slug}`} // Link to the dynamic blog details page using the slug
+            href={`/blog/${slug}`}
             passHref
             className=" inline-block text-sm font-medium text-[--primary-color] underline hover:text-indigo-700"
           >
@@ -103,26 +103,103 @@ function InfoCard({
 }
 
 export default function Blog() {
+  const recentBlogs = blogList.slice(0, 2)
+
+  const [searchTerm, setSearchTerm] = React.useState('')
+  const [filteredBlogs, setFilteredBlogs] = React.useState(blogList)
+
+  const handleSearch = () => {
+    const result = blogList.filter((blog) =>
+      blog.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    setFilteredBlogs(result)
+  }
+
   return (
     <Container className="pb-16 pt-20 lg:py-32">
-      <section className="body-font h-auto max-w-[1223px] overflow-visible !rounded-xl border border-solid border-white/15 text-gray-600 shadow-[rgba(0,0,0,0.25)_0px_30px_60px_0px,_rgba(0,0,0,0.25)_0px_15px_30px_0px,_rgba(0,0,0,0.25)_0px_5px_10px_0px,_rgba(204,215,255,0.15)_0px_0px_100px_0px_inset] backdrop-blur-[25px]">
-        <div className="container mx-auto px-5 py-14">
-          <div className="mb-4 flex w-full flex-col flex-wrap items-center p-6 lg:mb-20">
-            <h2 className="text-center font-display text-3xl tracking-tight text-white sm:text-4xl">
-              The Blog of &nbsp;LeapTheLimit
+      <section className="body-font h-auto max-w-[1223px] overflow-visible rounded-xl border border-solid border-white/15 text-gray-600 shadow-lg backdrop-blur-lg">
+        <div className="container mx-auto px-6 py-12 lg:py-16">
+          <div className="flex w-full flex-col flex-wrap items-center text-center mb-12">
+            <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+              Featured Blog
             </h2>
           </div>
 
-          <div className="-m-2 flex flex-wrap">
-            {blogList.map((blog) => (
-              <InfoCard
-                key={blog.slug}
-                slug={blog.slug}
-                title={blog.title}
-                publishedAt={blog.publishedAt}
-                description={blog.description}
-              />
-            ))}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8 p-4">
+            <div className="relative col-span-2 group">
+              <Link
+                href={`/blog/${blogList[0].slug}`}
+                passHref
+                className="relative block"
+              >
+                <Image
+                  src={coverImage}
+                  alt="Large Image"
+                  className="h-auto w-full rounded-xl object-cover"
+                  width={800}
+                  height={1000}
+                />
+                <div className="absolute inset-0 flex flex-col justify-end bg-black/30 p-6 text-white rounded-xl transition-opacity duration-300 group-hover:bg-black/50">
+                  <h3 className="absolute bottom-4 left-4 text-2xl font-semibold">{blogList[0].title}</h3>
+                  <p className="absolute top-4 left-4 text-sm">{blogList[0].publishedAt}</p>
+                </div>
+              </Link>
+            </div>
+
+            <div className="grid grid-rows-2 gap-6">
+              {recentBlogs.map((blog) => (
+                <div className="relative group" key={blog.slug}>
+                  <Link
+                    href={`/blog/${blog.slug}`}
+                    passHref
+                    className="relative block"
+                  >
+                    <Image
+                      src={coverImage}
+                      alt={blog.title}
+                      className="h-auto w-full rounded-xl object-cover"
+                      width={400}
+                      height={300}
+                    />
+                    <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/30 p-4 text-white rounded-xl transition-opacity duration-300 group-hover:bg-black/50">
+                      <h3 className="text-2xl font-semibold">{blog.title}</h3>
+                      <p className="absolute top-4 right-4 text-sm">{blog.publishedAt}</p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="my-8 flex items-center justify-center pr-6 pt-6 space-x-4">
+  <input
+    type="text"
+    placeholder="Search Blog by title..."
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    className="w-full md:w-80 py-1 px-5 text-sm text-gray-700 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-300 ease-in-out"
+  />
+  <button
+    onClick={handleSearch}
+    className="py-1 px-5 bg-blue-600 text-sm text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+  >
+    Search
+  </button>
+</div>
+
+
+          <div className="mt-12">
+            <div className="flex flex-wrap -m-2 justify-center gap-4">
+              {filteredBlogs.map((blog) => (
+                <InfoCard
+                  key={blog.slug}
+                  slug={blog.slug}
+                  title={blog.title}
+                  publishedAt={blog.publishedAt}
+                  description={blog.description}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
