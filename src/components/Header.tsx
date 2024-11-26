@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
@@ -10,12 +10,13 @@ import { Container } from '@/components/Container'
 import { NavLink } from '@/components/NavLink'
 import AI from '@/images/avif/hope-ai.avif'
 import StarLogo from '@/images/avif/leap_the _time_logo.avif'
+import Logo from '@/images/avif/leapTheTimeLogo.avif'
+
 import Image from 'next/image'
 import Career from '../components/logos/career'
 import Government from './logos/government-policies'
 import Degree from './logos/degree'
 import IconBa from './logos/iconba'
-import About from '@/app/about/page'
 import NewsRoom from './logos/news-room'
 import EBook from './logos/e-book'
 import Trending from './logos/trending'
@@ -23,11 +24,9 @@ import ResearchLab from './logos/research-lab'
 import HelpCenter from './logos/help-center'
 import Alliance from './logos/alliance'
 import GrowthBusiness from './logos/growth-business'
-import Customize from './logos/customize'
-import Help from './logos/help'
 import WriteBook from './logos/write-book'
-import User from './logos/user'
 import QuestionMark from './logos/question-mark'
+import Arrow from './logos/arrow'
 function MobileNavLink({
   href,
   children,
@@ -36,9 +35,12 @@ function MobileNavLink({
   children: React.ReactNode
 }) {
   return (
-    <Popover.Button as={Link} href={href} className="block w-full p-2">
+    <Link
+      href={href}
+      className="text-gray-custom block w-full p-2 hover:text-white"
+    >
       {children}
-    </Popover.Button>
+    </Link>
   )
 }
 
@@ -70,6 +72,8 @@ function MobileNavIcon({ open }: { open: boolean }) {
 }
 
 function MobileNavigation() {
+  const [openSection, setOpenSection] = useState<number | null>(null)
+
   const megaMenuData = [
     {
       title: 'AI',
@@ -106,6 +110,10 @@ function MobileNavigation() {
     },
   ]
 
+  const toggleSection = (index: number) => {
+    setOpenSection(openSection === index ? null : index)
+  }
+
   return (
     <Popover>
       <Popover.Button
@@ -140,21 +148,36 @@ function MobileNavigation() {
             className="absolute left-[-16px] top-full mt-[0.8rem] flex h-[90svh] w-[106%] origin-top flex-col overflow-y-scroll bg-black p-4 text-lg tracking-tight text-white shadow-xl ring-1 ring-slate-900/5"
           >
             {megaMenuData.map((section, index) => (
-              <div
-                key={index}
-                className="mt-3 flex flex-col divide-y divide-[70%] divide-slate-300/40"
-              >
-                <p className="text-gray-custom my-5 text-sm font-semibold">
+              <div key={index} className="mt-3">
+                <button
+                  className="flex w-full justify-between rounded px-3 py-2 text-left text-sm font-semibold"
+                  onClick={() => toggleSection(index)}
+                >
                   {section.title}
-                </p>
-                {section.content.length > 0
-                  ? section.content.map((item, idx) => (
-                      <MobileNavLink key={idx} href={item.link}>
-                        {item.name}
-                        {/* <hr className="m-2 border-slate-300/40" /> */}
-                      </MobileNavLink>
-                    ))
-                  : ''}
+                  <Arrow
+                    className={`h-5 w-5 transform transition-transform duration-300 ${
+                      openSection === index ? 'rotate-180' : 'rotate-0'
+                    }`}
+                  />
+
+                  {/* <span>{openSection === index ? '-' : '+'}</span> */}
+                </button>
+                {openSection === index && (
+                  <div className="mt-2 space-y-2 pl-4">
+                    {section.content.length > 0 ? (
+                      section.content.map((item, idx) => (
+                        <MobileNavLink key={idx} href={item.link}>
+                          {item.name}
+                          {/* <hr className="border-slate-300/40" /> */}
+                        </MobileNavLink>
+                      ))
+                    ) : (
+                      <p className="text-sm text-gray-400">
+                        No content available.
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
           </Popover.Panel>
@@ -298,13 +321,8 @@ export function Header() {
               aria-label="Home"
               className="flex items-center gap-1"
             >
-              <Image
-                src={StarLogo}
-                alt="logo"
-                className="w-8 rounded-xl object-cover"
-              />
-
-              <h1 className="text-xl text-white">LeapTheLimit</h1>
+              <Image src={StarLogo} alt="logo" className="w-8  object-cover" />
+              <Image src={Logo} alt="logo" className="w-[150px] object-cover" />
             </Link>
           </div>
           <div className="flex items-center md:gap-x-12">

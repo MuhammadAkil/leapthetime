@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import FooterLinks from './FooterLinks'
 import StarLogo from '@/images/avif/leap_the _time_logo.avif'
+import Logo from '@/images/avif/leapTheTimeLogo.avif'
 
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false)
@@ -33,18 +34,16 @@ export default function Footer() {
       <div className="gradient-border"></div>
       <div className="container mx-auto flex max-w-7xl flex-col flex-wrap px-5 py-24 md:flex-row md:flex-nowrap md:items-center lg:items-start">
         <div className="mx-auto w-64 flex-shrink-0 text-center md:mx-0 md:text-left">
-          <Link
-            href="/"
-            aria-label="Home"
-            className="title-font flex items-center justify-center font-medium text-white md:justify-start"
-          >
-            <Image
-              src={StarLogo}
-              alt="logo"
-              className="w-8 rounded-xl object-cover"
-            />
-            <h1 className="text-xl text-white">LeapTheLimit</h1>
-          </Link>
+          <div className="flex items-center md:gap-x-12">
+            <Link
+              href="/"
+              aria-label="Home"
+              className="flex items-center gap-1"
+            >
+              <Image src={StarLogo} alt="logo" className="w-8  object-cover" />
+              <Image src={Logo} alt="logo" className="w-[150px] object-cover" />
+            </Link>
+          </div>
         </div>
         <div className="-mb-10 mt-10 flex flex-grow flex-wrap text-center md:mt-0 md:pl-0 md:text-left">
           <FooterLinks />
