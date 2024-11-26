@@ -11,8 +11,23 @@ import { NavLink } from '@/components/NavLink'
 import AI from '@/images/avif/hope-ai.avif'
 import StarLogo from '@/images/avif/leap_the _time_logo.avif'
 import Image from 'next/image'
-import { title } from 'process'
-
+import Career from '../components/logos/career'
+import Government from './logos/government-policies'
+import Degree from './logos/degree'
+import IconBa from './logos/iconba'
+import About from '@/app/about/page'
+import NewsRoom from './logos/news-room'
+import EBook from './logos/e-book'
+import Trending from './logos/trending'
+import ResearchLab from './logos/research-lab'
+import HelpCenter from './logos/help-center'
+import Alliance from './logos/alliance'
+import GrowthBusiness from './logos/growth-business'
+import Customize from './logos/customize'
+import Help from './logos/help'
+import WriteBook from './logos/write-book'
+import User from './logos/user'
+import QuestionMark from './logos/question-mark'
 function MobileNavLink({
   href,
   children,
@@ -156,28 +171,28 @@ export function Header() {
         {
           title: 'AI',
           name: 'For Business',
-          icon: '🛠️',
+          icon: <GrowthBusiness width="24" height="24" fill="#006FE8" />,
           description: 'Drive Growth',
           link: 'for-business',
         },
         {
           title: 'AI',
           name: 'For Government',
-          icon: '📦',
+          icon: <Government width="24" height="24" fill="#006FE8" />,
           description: 'Smarter Policy Decision',
           link: 'for-government',
         },
         {
           title: 'AI',
           name: 'For Education',
-          icon: '🔧',
+          icon: <Degree width="24" height="24" fill="#006FE8" />,
           description: 'Empower students and teachers',
           link: 'for-education',
         },
         {
           title: 'AI',
           name: 'For Healthcare',
-          icon: '🛠️',
+          icon: <IconBa width="24" height="24" fill="#006FE8" />,
           description: 'Accelerate Diagnosis, Improve Accuracy',
           link: 'for-healthcare',
         },
@@ -188,25 +203,25 @@ export function Header() {
       content: [
         {
           name: 'About',
-          icon: '🤖',
+          icon: <QuestionMark width="24" height="24" fill="#006FE8" />,
           description: 'Learn who we are',
           link: 'about',
         },
         {
           name: 'Contact',
-          icon: '🔍',
+          icon: <Alliance width="24" height="24" fill="#006FE8" />,
           description: 'Get in touch',
           link: 'contact',
         },
         {
           name: 'Careers',
-          icon: '🤖',
+          icon: <Career width="24" height="24" fill="#006FE8" />,
           description: 'Explore open positions',
           link: 'careers',
         },
         {
           name: 'Newsroom',
-          icon: '🔍',
+          icon: <NewsRoom width="24" height="24" fill="#006FE8" />,
           description: 'Latest announcements',
           link: 'newsroom',
         },
@@ -217,37 +232,37 @@ export function Header() {
       content: [
         {
           name: 'Academy',
-          icon: '🤖',
+          icon: <Degree width="24" height="24" fill="#006FE8" />,
           description: 'Upskill your team',
           link: '/academy',
         },
         {
           name: 'e-Book',
-          icon: '🔍',
+          icon: <EBook width="24" height="24" fill="#006FE8" />,
           description: 'Download & learn',
           link: '/e-book',
         },
         {
           name: 'Blog',
-          icon: '🔍',
+          icon: <WriteBook width="24" height="24" fill="#006FE8" />,
           description: 'Insights & inspiration',
           link: '/blog',
         },
         {
           name: 'Trending',
-          icon: '🔍',
+          icon: <Trending width="24" height="24" fill="#006FE8" />,
           description: 'Hot topics in AI',
           link: '/trending',
         },
         {
           name: 'Research Lab',
-          icon: '🔍',
+          icon: <ResearchLab width="24" height="24" fill="#006FE8" />,
           description: 'Explore our breakthroughs',
           link: '/research-lab',
         },
         {
           name: 'Help Center',
-          icon: '🔍',
+          icon: <HelpCenter width="24" height="24" fill="#006FE8" />,
           description: 'Find answers fast',
           link: '/help-center',
         },

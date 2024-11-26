@@ -1,17 +1,17 @@
 import React from 'react'
 
 interface LogoProps {
-  width?: string
-  height?: string
-  fill?: string
-  className?: string
+  width?: string // Optional width of the logo
+  height?: string // Optional height of the logo
+  fill?: string // Optional fill color
+  className?: string // Optional additional class names
 }
 
-const QuestionMark: React.FC<LogoProps> = ({
-  width = '50px',
-  height = '50px',
-  fill = '#000',
-  className = '',
+const Help: React.FC<LogoProps> = ({
+  width = '50px', // Default width
+  height = '50px', // Default height
+  fill = '#000', // Default fill color
+  className = '', // Default to no extra classes
 }) => {
   return (
     <svg
@@ -30,4 +30,4 @@ const QuestionMark: React.FC<LogoProps> = ({
   )
 }
 
-export default QuestionMark
+export default Help

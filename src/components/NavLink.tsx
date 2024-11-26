@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image'
 
 interface MegaMenuItem {
   name?: string
-  icon?: string
+  icon?: string | JSX.Element
   description?: string
   title?: string
   link?: string
@@ -86,7 +86,7 @@ export function NavLink({ href, children, megaMenuContent }: NavLinkProps) {
                           </div>
 
                           <Link href={`${item?.link}`} passHref>
-                            <div className="flex cursor-pointer gap-3 rounded p-1 hover:bg-white/30">
+                            <div className="flex cursor-pointer gap-3 rounded p-1 hover:bg-white/10">
                               {/* Icon */}
                               <span className="flex h-[36px] items-center justify-center rounded-md border border-[#7d7d7d] p-1.5 text-sm">
                                 {item.icon}

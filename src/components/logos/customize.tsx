@@ -7,7 +7,7 @@ interface LogoProps {
   className?: string // Optional additional class names
 }
 
-const Career: React.FC<LogoProps> = ({
+const Customize: React.FC<LogoProps> = ({
   width = '50px', // Default width
   height = '50px', // Default height
   fill = '#000', // Default fill color
@@ -29,4 +29,4 @@ const Career: React.FC<LogoProps> = ({
   )
 }
 
-export default Career
+export default Customize
