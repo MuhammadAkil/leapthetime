@@ -17,6 +17,7 @@ export default function Register() {
           className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
         >
           <TextField
+            className="col-span-full"
             label="Full name"
             name="full_name"
             type="text"
