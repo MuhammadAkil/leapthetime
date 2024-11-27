@@ -81,13 +81,14 @@ function InfoCard({
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/30 p-3 text-white rounded-xl transition-opacity duration-300 group-hover:bg-black/50">
           <h3 className="text-lg font-semibold">{title}</h3> 
           <p className="absolute bottom-2 left-4 text-xs">{publishedAt}</p>  
+           <p className="absolute top-2 left-4 text-sm">
+                        Catagory
+                      </p>
         </div>
       </Link>
     </div>
   );
 }
-
-
 
 export default function Blog() {
   const recentBlogs = blogList.slice(0, 2)
@@ -165,8 +166,11 @@ export default function Blog() {
                     />
                     <div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl bg-black/30 p-4 text-white transition-opacity duration-300 group-hover:bg-black/50">
                       <h3 className="text-2xl font-semibold">{blog.title}</h3>
-                      <p className="absolute bottom-4 left-4 text-sm">
+                      <p className="absolute bottom-2 left-4 text-sm">
                         {blog.publishedAt}
+                      </p>
+                      <p className="absolute top-2 left-4 text-sm">
+                        Catagory
                       </p>
                     </div>
                   </Link>

@@ -2,8 +2,20 @@
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import React, { useState, useEffect } from 'react'
 
 export function Hero() {
+  const texts = ["Faster AI", "Safer AI", "Smarter AI"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length); 
+    }, 2000);
+
+    return () => clearInterval(interval); 
+  }, [texts.length]);
+
   return (
     <Container className="pb-16 pt-20 text-center lg:pt-32">
       <Button
@@ -24,13 +36,12 @@ export function Hero() {
         </span>
       </Button>
       <h1 className="gradient-text mx-auto max-w-4xl font-display text-[1.5rem] font-medium tracking-tight text-slate-900 sm:text-5xl lg:text-8xl">
-        Supercharge <br /> Your Productivity
+        Supercharge <br /> Your Workplace
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-[#ffffff96]">
-        LeapTheLimit empowers teams to achieve more with Faster AI{' '}
+        LeapTheLimit empowers teams to achieve more with  {' '}
+        <span className="gradient-text text-white font-semibold">{texts[currentIndex]}</span>
       </p>
-
-      {/* <TextAnimation /> */}
       <div className="mt-10 flex justify-center gap-x-6">
         <Button
           href="/register"

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Container } from '@/components/Container'
 import Image from 'next/image'
 import coverImage from '@/images/avif/cover.webp'
-import { useParams } from 'next/navigation' // Use useParams for dynamic route params
+import { useParams } from 'next/navigation' 
 import Link from 'next/link'
 
 export default function BlogDetails() {
@@ -14,13 +14,13 @@ export default function BlogDetails() {
     content: string
   } | null>(null)
 
-  const params = useParams() // Use useParams to get route parameters
-  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug // Handle the case where slug could be an array
+  const params = useParams() 
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug 
 
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    setIsClient(true) // Set client flag to true once the component is mounted
+    setIsClient(true)
   }, [])
 
   useEffect(() => {
@@ -77,29 +77,29 @@ export default function BlogDetails() {
         },
       }
 
-      setBlogData(blogContent[slug]) // Use the slug to get the matching blog content
+      setBlogData(blogContent[slug]) 
     }
-  }, [slug]) // Re-run this effect when the slug changes
+  }, [slug])
 
   if (!isClient) {
-    return null // Prevent SSR error by returning nothing during SSR
+    return null 
   }
 
   if (!blogData) {
-    return <div>Loading...</div> // Show loading message if data is not available
+    return <div>Loading...</div> 
   }
 
   return (
     <Container className="pb-16 pt-20 lg:py-32">
       <article className="body-font h-auto max-w-[1223px] overflow-visible !rounded-xl border border-solid border-white/15 text-gray-600 shadow-[rgba(0,0,0,0.25)_0px_30px_60px_0px,_rgba(0,0,0,0.25)_0px_15px_30px_0px,_rgba(0,0,0,0.25)_0px_5px_10px_0px,_rgba(204,215,255,0.15)_0px_0px_100px_0px_inset] backdrop-blur-[25px]">
         <div className="container mx-auto max-w-[800px] px-5 py-14">
-          <h2 className="text-center font-display text-3xl tracking-tight text-white sm:text-4xl">
+           <h2 className="text-start font-display text-3xl tracking-tight text-white mb-16 sm:text-4xl">
+            Blog.
+          </h2>
+          <h2 className="text-start font-display text-3xl tracking-tight text-white sm:text-4xl">
             {blogData.title}
           </h2>
-          <p className="text-center text-xl text-white">{blogData.subtitle}</p>
-          <p className="text-center">
-            Published on: {new Date().toLocaleDateString()}
-          </p>
+          <p className="text-start text-lg text-white">{blogData.subtitle}</p>
 
           <div className="mt-6">
             <Image
@@ -110,6 +110,14 @@ export default function BlogDetails() {
               height={600}
             />
           </div>
+          <div className='p-14'>
+          <p className="text-start text-white mt-4">
+             {new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})}
+          </p>
           <div className="mt-8 text-base text-white">
             <p>{blogData.content}</p>
           </div>
@@ -121,9 +129,9 @@ export default function BlogDetails() {
           </h2>
           <div className="mt-4 text-base text-white">
             <p>{blogData.content}</p>
+            </div>
           </div>
-        </div>
-        <Link
+           <Link
           href="/blog"
           passHref
           className=" m-5 inline-flex items-center rounded-full bg-gradient-to-r from-black to-blue-500 px-6 py-2 text-sm font-medium text-white shadow-md transition-all duration-200 hover:from-gray-800 hover:to-blue-600 hover:shadow-lg"
@@ -139,6 +147,7 @@ export default function BlogDetails() {
           </svg>{' '}
           Back to Blog
         </Link>
+        </div>
       </article>
     </Container>
   )
