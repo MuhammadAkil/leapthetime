@@ -4,7 +4,7 @@ import { SlimLayout } from '@/components/SlimLayout'
 import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sign Up',
+  title: 'Book Demo',
 }
 
 export default function Register() {
@@ -18,8 +18,8 @@ export default function Register() {
         >
           <TextField
             className="col-span-full"
-            label="Full name"
-            name="full_name"
+            label="Full Name"
+            name="fullName"
             type="email"
             autoComplete="email"
             required
@@ -34,7 +34,7 @@ export default function Register() {
           />
           <TextField
             className="col-span-full"
-            label="Phone number "
+            label="Phone Number "
             name="phoneNumber"
             type="tel"
             autoComplete="new-password"
@@ -62,7 +62,7 @@ export default function Register() {
             <Button
               type="submit"
               variant="solid"
-              className="bg-primary-color hover:bg-[--primary-color]/80 w-full py-2"
+              className="bg-primary-color hover:bg-primary-color/80 w-full py-2"
             >
               <span>
                 Request Demo <span aria-hidden="true">&rarr;</span>
