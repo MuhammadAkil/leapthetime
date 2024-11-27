@@ -106,39 +106,25 @@ export default function Blog() {
     <Container className="pb-16 pt-20 lg:py-32">
       <section className="body-font h-auto max-w-[1223px] overflow-visible rounded-xl border border-solid border-white/15 text-gray-600 shadow-lg backdrop-blur-lg">
         <div className="container mx-auto px-6 py-12 lg:py-16">
-        <div className="flex w-full flex-col flex-wrap mb-4">
-  <div className="text-center">
-    <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-      Blog.
-    </h2>
-  </div>
-  <div className="mt-8 px-4">
-  <div className="flex items-center justify-between">
-    <h2 className="font-display text-left text-3xl tracking-tight text-white sm:text-4xl">
-      Featured
-    </h2>
-   <div className="flex items-center">
-  <input
-    type="text"
-    placeholder="Search Blog by title..."
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-    onKeyDown={(e) => {
-      if (e.key === "Enter") {
-        handleSearch();
-      }
-    }}
-    className="w-full md:w-80 py-1 px-5 text-sm text-gray-700 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-300 ease-in-out"
-  />
-</div>
+          <div className="mb-4 flex w-full flex-col flex-wrap">
+            <div className="mb-10 text-center">
+              <h2 className="mb-4 font-display text-3xl tracking-tight text-white sm:text-4xl">
+                Blogs
+              </h2>
+              <p className="text-[20px] font-medium text-white">
+                Here are all our essential tips to empower you to embark{' '}
+                <br className="hidden lg:block" /> on your AI journey.
+              </p>
+            </div>
+            <div className="mt-8 px-4">
+              <h2 className="ps-1 text-left font-display text-3xl tracking-tight text-white">
+                Featured
+              </h2>
+            </div>
+          </div>
 
-  </div>
-</div>
-
-</div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8 p-4">
-            <div className="relative col-span-2 group">
+          <div className="grid grid-cols-1 gap-6 p-4 md:grid-cols-3 lg:gap-8">
+            <div className="group relative col-span-2">
               <Link
                 href={`/blog/${blogList[0].slug}`}
                 passHref
@@ -151,16 +137,20 @@ export default function Blog() {
                   width={800}
                   height={1000}
                 />
-                <div className="absolute inset-0 flex flex-col justify-end bg-black/30 p-6 text-white rounded-xl transition-opacity duration-300 group-hover:bg-black/50">
-                  <h3 className="absolute bottom-4 left-4 text-2xl font-semibold">{blogList[0].title}</h3>
-                  <p className="absolute top-4 left-4 text-sm">{blogList[0].publishedAt}</p>
+                <div className="absolute inset-0 flex flex-col justify-end rounded-xl bg-black/30 p-6 text-white transition-opacity duration-300 group-hover:bg-black/50">
+                  <h3 className="absolute bottom-4 left-4 text-2xl font-semibold">
+                    {blogList[0].title}
+                  </h3>
+                  <p className="absolute left-4 top-4 text-sm">
+                    {blogList[0].publishedAt}
+                  </p>
                 </div>
               </Link>
             </div>
 
             <div className="grid grid-rows-2 gap-6">
               {recentBlogs.map((blog) => (
-                <div className="relative group" key={blog.slug}>
+                <div className="group relative" key={blog.slug}>
                   <Link
                     href={`/blog/${blog.slug}`}
                     passHref
@@ -173,33 +163,52 @@ export default function Blog() {
                       width={400}
                       height={300}
                     />
-                   <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/30 p-4 text-white rounded-xl transition-opacity duration-300 group-hover:bg-black/50">
-  <h3 className="text-2xl font-semibold">{blog.title}</h3>
-  <p className="absolute bottom-4 left-4 text-sm">{blog.publishedAt}</p>
-</div>
-
+                    <div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl bg-black/30 p-4 text-white transition-opacity duration-300 group-hover:bg-black/50">
+                      <h3 className="text-2xl font-semibold">{blog.title}</h3>
+                      <p className="absolute bottom-4 left-4 text-sm">
+                        {blog.publishedAt}
+                      </p>
+                    </div>
                   </Link>
                 </div>
               ))}
             </div>
           </div>
-         <div className="mt-12">
- <div className="mt-12">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {filteredBlogs.map((blog) => (
-      <InfoCard
-        key={blog.slug}
-        slug={blog.slug}
-        title={blog.title}
-        publishedAt={blog.publishedAt}
-        description={blog.description}
-      />
-    ))}
-  </div>
-</div>
-
-</div>
-
+          <div className="mt-12">
+            {' '}
+            <div className="flex items-center justify-between">
+              <h2 className="ps-2 text-left font-display text-3xl tracking-tight text-white">
+                Latest
+              </h2>
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  placeholder="Search Blog by title..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleSearch()
+                    }
+                  }}
+                  className="focus:ring-primary-color w-full rounded-lg border border-gray-300 px-5 py-1 text-sm text-gray-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 md:w-80"
+                />
+              </div>
+            </div>
+            <div className="mt-8">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                {filteredBlogs.map((blog) => (
+                  <InfoCard
+                    key={blog.slug}
+                    slug={blog.slug}
+                    title={blog.title}
+                    publishedAt={blog.publishedAt}
+                    description={blog.description}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </Container>
