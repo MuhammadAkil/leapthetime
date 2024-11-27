@@ -14,14 +14,14 @@ export default function Register() {
         <h2 className="text-lg font-semibold text-white">Request Demo</h2>
         <form
           action="#"
-          className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
+          className="mt-6 grid w-full  grid-cols-1 gap-y-8 sm:grid-cols-2"
         >
           <TextField
             className="col-span-full"
             label="Full name"
             name="full_name"
-            type="text"
-            autoComplete="given-name"
+            type="email"
+            autoComplete="email"
             required
           />
           <TextField
