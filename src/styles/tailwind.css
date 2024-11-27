@@ -124,7 +124,7 @@ body{
 .animate-marquee {
   display: flex;
   gap: 100px;
-  animation: slide-marquee 20s linear infinite;
+  animation: slide-marquee 60s linear infinite;
   white-space: nowrap;
 }
 
