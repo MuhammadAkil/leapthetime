@@ -93,7 +93,7 @@ export default function BlogDetails() {
     <Container className="pb-16 pt-20 lg:py-32">
       <article className="body-font h-auto max-w-[1223px] overflow-visible !rounded-xl border border-solid border-white/15 text-gray-600 shadow-[rgba(0,0,0,0.25)_0px_30px_60px_0px,_rgba(0,0,0,0.25)_0px_15px_30px_0px,_rgba(0,0,0,0.25)_0px_5px_10px_0px,_rgba(204,215,255,0.15)_0px_0px_100px_0px_inset] backdrop-blur-[25px]">
         <div className="container mx-auto max-w-[800px] px-5 py-14">
-           <h2 className="text-start font-display text-3xl tracking-tight text-white mb-16 sm:text-4xl">
+          <h2 className="mb-16 text-start font-display text-3xl tracking-tight text-white sm:text-4xl">
             Blog.
           </h2>
           <h2 className="text-start font-display text-3xl tracking-tight text-white sm:text-4xl">
@@ -110,43 +110,43 @@ export default function BlogDetails() {
               height={600}
             />
           </div>
-          <div className='p-14'>
-          <p className="text-start text-white mt-4">
-             {new Date().toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-})}
-          </p>
-          <div className="mt-8 text-base text-white">
-            <p>{blogData.content}</p>
-          </div>
-          <div className="mt-8 text-base text-white">
-            <p>{blogData.content}</p>
-          </div>
-          <h2 className="mt-8 text-start font-display text-2xl tracking-tight text-white sm:text-3xl">
-            {blogData.title}
-          </h2>
-          <div className="mt-4 text-base text-white">
-            <p>{blogData.content}</p>
+          <div className="py-14">
+            <p className="mt-4 text-start text-white">
+              {new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </p>
+            <div className="mt-8 text-base text-white">
+              <p>{blogData.content}</p>
+            </div>
+            <div className="mt-8 text-base text-white">
+              <p>{blogData.content}</p>
+            </div>
+            <h2 className="mt-8 text-start font-display text-2xl tracking-tight text-white sm:text-3xl">
+              {blogData.title}
+            </h2>
+            <div className="mt-4 text-base text-white">
+              <p>{blogData.content}</p>
             </div>
           </div>
-           <Link
-          href="/blog"
-          passHref
-          className=" m-5 inline-flex items-center rounded-full bg-gradient-to-r from-black to-blue-500 px-6 py-2 text-sm font-medium text-white shadow-md transition-all duration-200 hover:from-gray-800 hover:to-blue-600 hover:shadow-lg"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            className="-rotate-90 fill-current text-white"
+          <Link
+            href="/blog"
+            passHref
+            className=" m-5 inline-flex items-center rounded-full bg-gradient-to-r from-black to-blue-500 px-6 py-2 text-sm font-medium text-white shadow-md transition-all duration-200 hover:from-gray-800 hover:to-blue-600 hover:shadow-lg"
           >
-            <path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z"></path>
-          </svg>{' '}
-          Back to Blog
-        </Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="-rotate-90 fill-current text-white"
+            >
+              <path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z"></path>
+            </svg>{' '}
+            Back to Blog
+          </Link>
         </div>
       </article>
     </Container>
